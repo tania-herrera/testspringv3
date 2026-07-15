@@ -1,6 +1,7 @@
 package org.core.curso.testspring.serviceImpl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.core.curso.testspring.data.model.Customer;
 import org.core.curso.testspring.data.repository.IRepositoryCustomer;
@@ -14,6 +15,23 @@ public class ServiceCustomer implements IServiceCustomer {
 		return repo.findAll();
 	}
 
+	@Override
+	public void showList(List<Customer> customerList) {
+		for (Customer customer : customerList) {
+			System.out.println("\t" + customer);
+		}
+	}
+	
+	@Override
+	public void showCustomer(Optional<Customer> customerOpt) {
+		if (customerOpt.isPresent()) {
+			System.out.println("\t" + customerOpt.get());
+		}
+		else {
+			System.out.println("\tNo existe el id dado");
+		}
+	}
+	
 	@Override
 	public void showAll() {
 		for (Customer customer : this.findAll()) {
@@ -38,42 +56,60 @@ public class ServiceCustomer implements IServiceCustomer {
 	}
 
 	@Override
-	public void insertDataTest() {
-		iDAOCustomer.insert(new Customer("Ana", 23, 1000d));
-		iDAOCustomer.insert(new Customer("Luis", 24, 2000d));
-		iDAOCustomer.insert(new Customer("Isaac", 25, 5000d));		
+	public void saveDataTest() {
+		repo.save(new Customer("Ana", 23, 1000d));
+		repo.save(new Customer("Luis", 24, 2000d));
+		repo.save(new Customer("Isaac", 25, 5000d));		
 	}
 
 	@Override
-	public void insert(Customer customer) {
-		iDAOCustomer.insert(customer);
-	}
-	
-	@Override
-	public void update(Customer customer) {
-		iDAOCustomer.update(customer);
+	public void save(Customer customer) {
+		repo.save(customer);
 	}
 
 	@Override
 	public void deleteById(Integer id) {
-		iDAOCustomer.deleteById(id);	
-		// TODO pendiente comprobar si está borrado
+		repo.deleteById(id);
 	}
 	
 	@Override
 	public void delete(Customer customer) {
-		iDAOCustomer.delete(customer);	
-		// TODO pendiente comprobar si está borrado
+		repo.delete(customer);	
 	}
 
 	@Override
 	public void deleteAll() {
-		iDAOCustomer.deleteAll();
+		repo.deleteAll();
 	}
 
 	@Override
 	public void truncate() {
-		iDAOCustomer.truncate();
+		repo.truncate();
+	}
+
+	@Override
+	public Boolean existsById(Integer id) {
+		return repo.existsById(id);
+	}
+
+	@Override
+	public List<Customer> findByName(String name) {
+		return repo.findByName(name);
+	}
+
+	@Override
+	public Optional<Customer> findById(Integer id) {
+		return repo.findById(id);
+	}
+
+	@Override
+	public List<Customer> findByAgeBetween(Integer minAge, Integer maxAge) {
+		return repo.findByAgeBetween(minAge, maxAge);
+	}
+
+	@Override
+	public List<Customer> findByNameAndAge(String name, Integer age) {
+		return repo.findByNameAndAge(name, age);
 	}
 
 }
