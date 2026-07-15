@@ -57,9 +57,9 @@ public class ServiceCustomer implements IServiceCustomer {
 
 	@Override
 	public void saveDataTest() {
-		repo.save(new Customer("Ana", 23, 1000d));
-		repo.save(new Customer("Luis", 24, 2000d));
-		repo.save(new Customer("Isaac", 25, 5000d));		
+		repo.save(new Customer("Ana", 23, 1000d, "12345678"));
+		repo.save(new Customer("Luis", 24, 2000d, "87654321"));
+		repo.save(new Customer("Isaac", 25, 5000d, "56781234"));		
 	}
 
 	@Override

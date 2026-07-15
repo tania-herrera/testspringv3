@@ -19,12 +19,14 @@ public class Customer {
 	private String name;
 	private Integer age;
 	private Double totalPurchases;
+	private String cardNumber;
 	
-	public Customer(String name, Integer age, Double totalPurchases) {
+	public Customer(String name, Integer age, Double totalPurchases, String cardNumber) {
 		super();
 		this.name = name;
 		this.age = age;
 		this.totalPurchases = totalPurchases;
+		this.cardNumber = cardNumber;
 	}
 	
 }
