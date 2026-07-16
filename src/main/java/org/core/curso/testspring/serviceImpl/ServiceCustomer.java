@@ -2,6 +2,7 @@ package org.core.curso.testspring.serviceImpl;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 import org.core.curso.testspring.data.model.Customer;
 import org.core.curso.testspring.data.repository.IRepositoryCustomer;
@@ -17,26 +18,48 @@ public class ServiceCustomer implements IServiceCustomer {
 
 	@Override
 	public void showList(List<Customer> customerList) {
-		for (Customer customer : customerList) {
-			System.out.println("\t" + customer);
-		}
+//		ALTERNATIVA 1: recorrer la colección con un for each tradicional
+//		for (Customer customer : customerList) {
+//			System.out.println("\t" + customer);
+//		}
+//		
+//		ALTERNATIVA 2: crear stream intermedio y consumirlo con un forEach
+//		Stream<Customer> myStream = customerList.stream();
+//		myStream.forEach(customer -> System.out.println("\t" + customer));
+//		
+//		ALTERNATIVA 3: sacar stream directamente de la colección y consumirlo con un forEach
+//		y expresión Lambda
+//		customerList.stream().forEach(customer -> System.out.println("\t" + customer));
+//		
+//		ALTERNATIVA 4: sacar stream directamente de la colección y consumirlo con un forEach
+//		con una Referencia a Método - Method Reference (::)
+		customerList.stream()
+			.forEach(System.out::println);
 	}
 	
 	@Override
 	public void showCustomer(Optional<Customer> customerOpt) {
-		if (customerOpt.isPresent()) {
-			System.out.println("\t" + customerOpt.get());
-		}
-		else {
-			System.out.println("\tNo existe el id dado");
-		}
+//		if (customerOpt.isPresent()) {
+//			System.out.println("\t" + customerOpt.get());
+//		}
+//		else {
+//			System.out.println("\tNo existe el id dado");
+//		}
+//		System.out.println("\t" + 
+//				(customerOpt.isPresent()
+//						? customerOpt.get() 
+//						: "No existe el id dado")
+//		);
+		System.out.println("\t" + (customerOpt.isPresent() ? customerOpt.get() : "No existe el id dado"));
 	}
 	
 	@Override
 	public void showAll() {
-		for (Customer customer : this.findAll()) {
-			System.out.println("\t" + customer);
-		}
+//		for (Customer customer : this.findAll()) {
+//			System.out.println("\t" + customer);
+//		}
+		this.findAll().stream()
+			.forEach(c -> System.out.println("\t" + c));
 	}
 
 	@Override
