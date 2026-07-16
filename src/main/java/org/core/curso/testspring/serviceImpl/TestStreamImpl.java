@@ -21,12 +21,14 @@ public class TestStreamImpl implements ITestStream {
 		//
 		Predicate<String> p1 = Predicate.isEqual("one");
 		Predicate<String> p2 = Predicate.isEqual("two");
+		Predicate<String> p3 = Predicate.isEqual("seven");
 		//
 		List<String> oneOrTwoList = new ArrayList<String>();
 		//
 		myList.stream()
 			.peek(s -> System.out.println("\n\tPrimer peek: " + s))
-			.filter(p1.or(p2))
+			//.filter(p1.or(p2))
+			.filter(p3)
 			.peek(s -> System.out.println("\tSegundo peek: " + s))
 			.peek(oneOrTwoList::add)
 			.forEach(s -> System.out.println("\tTercer peek: se agregó: " + s));
