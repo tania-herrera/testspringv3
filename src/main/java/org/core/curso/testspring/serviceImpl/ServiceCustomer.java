@@ -8,7 +8,9 @@ import org.core.curso.testspring.data.model.Customer;
 import org.core.curso.testspring.data.repository.IRepositoryCustomer;
 import org.core.curso.testspring.service.IServiceCustomer;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ServiceCustomer implements IServiceCustomer {
 	
 	@Autowired

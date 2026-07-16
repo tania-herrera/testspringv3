@@ -4,7 +4,9 @@ import java.util.List;
 import java.util.Optional;
 
 import org.core.curso.testspring.data.model.Customer;
+import org.springframework.stereotype.Service;
 
+@Service
 public interface IServiceCustomer {
 
 	public void truncate();
