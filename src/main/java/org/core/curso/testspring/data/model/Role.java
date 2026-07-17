@@ -1,10 +1,14 @@
 package org.core.curso.testspring.data.model;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Size;
 import lombok.EqualsAndHashCode;
@@ -29,5 +33,8 @@ public class Role implements Serializable {
 	@Size(min = 3, max = 50, message = "Rolename must have 2 to 50 characters")
 	private String rolename;
 	
+	@ToString.Exclude
+	@ManyToMany(mappedBy = "roleSet")
+	private Set<User> userSet;
 
 }
