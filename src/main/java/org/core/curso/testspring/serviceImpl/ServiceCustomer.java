@@ -74,8 +74,24 @@ public class ServiceCustomer implements IServiceCustomer {
 			//sumTotalPurchases = sumTotalPurchases + customer.getTotalPurchases();
 			sumTotalPurchases += customer.getTotalPurchases();
 		}
-		System.out.println("La media de compras por cliente es " 
+		if (this.findAll().size() == 0) {
+			System.out.println("No se puede calcular la media: no hay ningún customer!");
+		}
+		else {
+			System.out.println("La media de compras por cliente es " 
 				+ (sumTotalPurchases / this.findAll().size()));
+		}
+	}
+
+	@Override
+	public void showTotalPurchasesAvgFromStream() {
+		// Stream con reducción al valor medio (con mapToInt y average):
+		this.findAll().stream()
+			.mapToInt(Customer::getAge)
+			.average()
+			.ifPresentOrElse(
+				avg -> System.out.println("\nLa media es: " + avg),
+				() -> System.out.println("\nLa media no se puede calcular: lista vacía"));
 	}
 
 	@Override

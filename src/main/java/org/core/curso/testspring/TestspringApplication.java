@@ -19,7 +19,7 @@ public class TestspringApplication {
 				
 		SpringApplication.run(TestspringApplication.class, args);
 		
-		//initTestStream();
+		initTestStream();
 	}
 
 	private static void initTestStream() {
@@ -55,7 +55,7 @@ public class TestspringApplication {
 				s -> System.out.println("\nEl máximo es: " + s),
 				() -> System.out.println("\nEl máximo no se puede calcular: lista vacía"));
 		//  
-		// Stream con reducción al valor medio (con mapToDouble y average):
+		// Stream con reducción al valor medio (con mapToInt y average):
 		customerList.stream()
 			.mapToInt(Customer::getAge)
 			.average()
@@ -63,7 +63,7 @@ public class TestspringApplication {
 				avg -> System.out.println("\nLa media 1 es: " + avg),
 				() -> System.out.println("\nLa media 1 no se puede calcular: lista vacía"));
 		//  
-		// Stream con reducción al valor medio (con mapToDouble y average)
+		// Stream con reducción al valor medio (con mapToInt y average)
 		// con una lista vacía para probar ifPresenteOrElse:
 		new ArrayList<Integer>().stream()
 			.mapToInt(Integer::intValue)
@@ -72,7 +72,7 @@ public class TestspringApplication {
 				avg -> System.out.println("\nLa media 2 es: " + avg),
 				() -> System.out.println("\nLa media 2 no se puede calcular: lista vacía"));
 		//  
-		// Stream con reducción al valor medio (con mapToDouble y average)
+		// Stream con reducción al valor medio (con mapToInt y average)
 		// para guardarlo en una variable en lugar de mostrarlo:
 		Double media = customerList.stream()
 			.mapToInt(Customer::getAge)
@@ -80,14 +80,15 @@ public class TestspringApplication {
 			.orElse(0D);
         System.out.println("\nLa media 3 guardada es: " + media);
 		//  
-		// Stream con reducción al valor medio (con mapToDouble y average)
+		// Stream con reducción al valor medio (con mapToInt y average)
 		// para guardarlo en una variable en lugar de mostrarlo,
 		// con lanzamiento y captura de excepción en caso de división por 0:
 		try {
 			Double miMedia = customerList.stream()
 					.mapToInt(Customer::getAge)
 					.average()
-					.orElseThrow(() -> new ArithmeticException("No se puede calcular la media 4: división por cero (lista vacía)"));
+					.orElseThrow(() -> new ArithmeticException(
+							"No se puede calcular la media 4: división por cero (lista vacía)"));
 			// Esta línea solo se ejecutará si la lista NO está vacía
             System.out.println("\nLa media 4 guardada es: " + miMedia);
 		} catch (ArithmeticException e) {
@@ -95,7 +96,7 @@ public class TestspringApplication {
             System.out.println("Error detectado en media 4: " + e.getMessage());			
 		}
 		//  
-		// Stream con reducción al valor medio (con mapToDouble y average)
+		// Stream con reducción al valor medio (con mapToInt y average)
 		// para guardarlo en una variable en lugar de mostrarlo,
 		// con lanzamiento y captura de excepción en caso de división por 0
 		// con una lista vacía:

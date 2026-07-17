@@ -28,7 +28,8 @@ public interface IServiceCustomer {
 	
 	public void showAll();
 	public void showTotalPurchasesAvg();
+	public void showTotalPurchasesAvgFromStream();	
 	public void showList(List<Customer> customerList);
-	public void showCustomer(Optional<Customer> customerOpt);	
+	public void showCustomer(Optional<Customer> customerOpt);
 	
 }
