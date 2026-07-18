@@ -4,11 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.core.curso.testspring.data.model.Customer;
-import org.core.curso.testspring.service.IServiceCustomer;
-import org.core.curso.testspring.service.ITestStream;
-import org.core.curso.testspring.serviceImpl.ServiceCustomer;
-import org.core.curso.testspring.serviceImpl.TestStreamImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -24,7 +19,7 @@ public class TestspringApplication {
 
 	private static void initTestStream() {
 //		ITestStream testStream = new TestStreamImpl();
-//		testStream.TestStream1();
+//		testStream.testStream1();
 		//
 		List<Customer> customerList = new ArrayList<Customer>();
 		customerList.add(new Customer(1L, "Ana", 23, 1000d, "12345678"));

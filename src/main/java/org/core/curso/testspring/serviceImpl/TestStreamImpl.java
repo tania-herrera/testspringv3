@@ -9,7 +9,7 @@ import org.core.curso.testspring.service.ITestStream;
 public class TestStreamImpl implements ITestStream {
 
 	@Override
-	public void TestStream1() {
+	public void testStream1() {
 		List<String> myList = new ArrayList<String>();
 		myList.add("one");
 		myList.add("two");
