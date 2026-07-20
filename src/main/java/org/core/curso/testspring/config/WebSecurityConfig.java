@@ -75,6 +75,7 @@ public class WebSecurityConfig {
                     .logoutSuccessUrl("/loginGet?logoutOk"); // If the logout is successful, user will be redirected to this URL.
                 	})
                 	
+                .sessionManagement(session -> session.maximumSessions(2))
                 ;
         
         log.info("*********** httpSecurity.getSharedObjects()= " + httpSecurity.getSharedObjects());
