@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import jakarta.transaction.Transactional;
 
 @Repository
-public interface IRepositoryCustomer extends JpaRepository<Customer, Integer> {
+public interface ICustomerRepository extends JpaRepository<Customer, Integer> {
 
 	public List<Customer> findByName(String name);
 	public List<Customer> findByAgeBetween(Integer minAge, Integer maxAge);

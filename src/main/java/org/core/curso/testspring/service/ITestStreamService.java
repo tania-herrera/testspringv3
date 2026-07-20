@@ -1,6 +1,6 @@
 package org.core.curso.testspring.service;
 
-public interface ITestStream {
+public interface ITestStreamService {
 	
 	public void testStream1();
 

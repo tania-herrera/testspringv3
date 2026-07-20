@@ -5,16 +5,16 @@ import java.util.Optional;
 import java.util.stream.Stream;
 
 import org.core.curso.testspring.data.model.Customer;
-import org.core.curso.testspring.data.repository.IRepositoryCustomer;
-import org.core.curso.testspring.service.IServiceCustomer;
+import org.core.curso.testspring.data.repository.ICustomerRepository;
+import org.core.curso.testspring.service.ICustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ServiceCustomer implements IServiceCustomer {
+public class CustomerService implements ICustomerService {
 	
 	@Autowired
-	private IRepositoryCustomer repo;
+	private ICustomerRepository repo;
 
 	@Override
 	public List<Customer> findAll() {

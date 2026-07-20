@@ -6,7 +6,7 @@
 
   <head>
     <meta charset="UTF-8">
-    <title>Tdd101</title>
+    <title>Login page</title>
     <meta charset="utf-8">
     <meta name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -33,53 +33,47 @@
 
               <div th:if="${param.logoutOk}">
               	<p class="h3 card-text text-center" style="color:green" 
-              		th:text="'Desconexión realizada correctamente!!! Puedes entrar de nuevo.'">
+              		th:text="'Logout successful! You can log back in.'">
               	</p>
               </div>
                             
-              <div th:if="${param.malformedCredentials}">
-              	<p class="h3 card-text text-center" style="color:yellow" 
-              		th:text="'Ususario/Password no validados!!! Prueba de nuevo.'">
-              	</p>
-              </div>
-              
               <div th:if="${param.loginError}">
               	<p class="h3 card-text text-center" style="color:red" 
-              		th:text="'Login error!!! Habla con el administrador.'">
+              		th:text="'Login error!!! Please contact the administrator.'">
               	</p>
               </div>
               	
               <div th:if="${param.badCredentials}">
               	<p class="h3 card-text text-center" style="color:yellow" 
-              		th:text="'Credenciales erróneas!!! Prueba de nuevo.'">
+              		th:text="'Bad credentials!!! Try again.'">
               	</p>
               </div>
               
               <div th:if="${param.lockedAccount}">
               	<p class="h3 card-text text-center" style="color:red" 
-              		th:text="'Cuenta bloqueada!!! Habla con el administrador.'">
+              		th:text="'Locked account!!! Please contact the administrator.'">
               	</p>
               </div>
 
               <div th:if="${param.disabledAccount}">
               	<p class="h3 card-text text-center" style="color:yellow" 
-              		th:text="'Cuenta desactivada!!! Habla con el administrador.'">
+              		th:text="'Disabled account!!! Please contact the administrator.'">
               	</p>
               </div>
 
               <div th:if="${param.credentialsExpired}">
               	<p class="h3 card-text text-center" style="color:red" 
-              		th:text="'Credenciales caducadas!!! Habla con el administrador.'">
+              		th:text="'Credentials expired!!! Please contact the administrator.'">
               	</p>
               </div>
               
               <div th:if="${param.accountExpired}">
               	<p class="h3 card-text text-center" style="color:red" 
-              		th:text="'Cuenta caducada!!! Habla con el administrador.'">
+              		th:text="'Account expired!!! Please contact the administrator.'">
               	</p>
               </div>
                                           
-              <form th:action="@{/login}" th:object="${login}" method="POST" 
+              <form th:action="@{/loginPost}" th:object="${login}" method="POST" 
               		class="form-inline d-flex justify-content-center h-25">
               		
                 <input th:field="*{username}" class="form-control  form-control mb-3"

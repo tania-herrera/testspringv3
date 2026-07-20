@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-import org.core.curso.testspring.service.ITestStream;
+import org.core.curso.testspring.service.ITestStreamService;
 
-public class TestStreamImpl implements ITestStream {
+public class TestStreamService implements ITestStreamService {
 
 	@Override
 	public void testStream1() {

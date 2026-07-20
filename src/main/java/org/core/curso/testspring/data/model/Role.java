@@ -3,8 +3,12 @@ package org.core.curso.testspring.data.model;
 import java.io.Serializable;
 import java.util.Set;
 
+import org.hibernate.FetchMode;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
@@ -36,5 +40,9 @@ public class Role implements Serializable {
 	@ToString.Exclude
 	@ManyToMany(mappedBy = "roleSet")
 	private Set<User> userSet;
+	
+	public Role(String rolename) {
+		this.rolename = rolename;
+	}
 
 }

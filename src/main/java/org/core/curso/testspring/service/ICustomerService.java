@@ -7,7 +7,7 @@ import org.core.curso.testspring.data.model.Customer;
 import org.springframework.stereotype.Service;
 
 @Service
-public interface IServiceCustomer {
+public interface ICustomerService {
 
 	public void truncate();
 	public void deleteAll();

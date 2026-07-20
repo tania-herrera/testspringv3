@@ -15,6 +15,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -61,6 +62,7 @@ public class User implements Serializable, UserDetails {
 	private String password;
 	
 	@Email
+	@Column(name = "EMAIL", unique = true, nullable = false)
 	@Size(min = 3, max = 100, message = "Email must have 3 to 100 characters")
 	private String email;
 	
@@ -87,7 +89,7 @@ public class User implements Serializable, UserDetails {
 	@Column(name = "ENABLED", nullable = false)
 	private Boolean enabled;
 
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(
 		name = "USERS_HAS_ROLES",
 		joinColumns = @JoinColumn(name = "FK_USERS_ID", referencedColumnName = "ID"),
@@ -98,6 +100,8 @@ public class User implements Serializable, UserDetails {
 	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
+		/*
+		// Versión con lista intermedia:
 		List<SimpleGrantedAuthority> simpleGrantedAuthorityList = new ArrayList<>();
 		// Obtener los roles del usuario autenticado:
 		this.getRoleSet().stream()
@@ -110,6 +114,14 @@ public class User implements Serializable, UserDetails {
 				.collect(Collectors.joining("|", "{", "}")));
 		//		
 		return simpleGrantedAuthorityList;
+		*/
+		//
+		// Versión sin lista intermedia y simplificada:
+		return this.getRoleSet().stream()
+			.map(Role::getRolename)
+			.peek(r -> log.info("\t|" + r + "|"))
+			.map(SimpleGrantedAuthority::new)
+			.toList();
 	}
 	
 	@Override

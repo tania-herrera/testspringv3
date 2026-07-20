@@ -1,6 +1,6 @@
 package org.core.curso.testspring.controller;
 
-import org.core.curso.testspring.service.IServiceCustomer;
+import org.core.curso.testspring.service.ICustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -28,7 +28,7 @@ import java.util.List;
 public class StartControllerImpl {
 
 	@Autowired
-	private IServiceCustomer customerService;
+	private ICustomerService customerService;
 
 	@GetMapping({ "/contactsGet" })
 	public String contactsGet(Principal principal, Model model, HttpServletRequest request) {
