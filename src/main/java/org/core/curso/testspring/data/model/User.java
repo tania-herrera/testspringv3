@@ -4,10 +4,13 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import org.hibernate.Hibernate;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -31,13 +34,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.SuperBuilder;
 import lombok.extern.java.Log;
 
 @NoArgsConstructor
+@SuperBuilder
 @Getter
 @Setter
 @ToString
-@EqualsAndHashCode
 @Log
 @Entity
 @Table(name = "USERS")
@@ -95,7 +99,7 @@ public class User implements Serializable, UserDetails {
 		joinColumns = @JoinColumn(name = "FK_USERS_ID", referencedColumnName = "ID"),
 		inverseJoinColumns = @JoinColumn(name = "FK_ROLES_ROLENAME", referencedColumnName = "ROLENAME")
 		)
-	private Set<Role> roleSet;
+	private Set<Role> roleSet = new HashSet<Role>();
 
 	
 	@Override
@@ -143,5 +147,47 @@ public class User implements Serializable, UserDetails {
 	public boolean isEnabled() {
 		return this.getEnabled();
 	}
+
+	public User(
+			@NotNull @Size(min = 3, max = 50, message = "Username must have 3 to 50 characters") String username,
+			@NotNull @Size(max = 100) String password,
+			@Email @Size(min = 3, max = 100, message = "Email must have 3 to 100 characters") String email,
+			@NotNull @Size(max = 100, message = "Fullname must have up to 100 characters") String fullname,
+			@NotNull LocalDate expiryDateAccount, 
+			@NotNull Boolean lockedAccount,
+			@NotNull LocalDate expiryDateCredentials, 
+			@NotNull Boolean enabled) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.email = email;
+		this.fullname = fullname;
+		this.expiryDateAccount = expiryDateAccount;
+		this.lockedAccount = lockedAccount;
+		this.expiryDateCredentials = expiryDateCredentials;
+		this.enabled = enabled;
+	}
+
+	@Override
+	public int hashCode() {
+		return Hibernate.getClass(this).hashCode(); // Hibernate recommendation
+		//return Objects.hash(id);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (Hibernate.getClass(this) != Hibernate.getClass(obj))
+			return false; // Hibernate recommendation
+		User other = (User) obj;
+		return getId() != null
+				&& Objects.equals(getId(), other.getId()); // Hibernate recommendation
+		//return Objects.equals(id, other.id);
+	}
+	
+	
 	
 }

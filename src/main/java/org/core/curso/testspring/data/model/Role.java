@@ -1,9 +1,12 @@
 package org.core.curso.testspring.data.model;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 import org.hibernate.FetchMode;
+import org.hibernate.Hibernate;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import jakarta.persistence.Column;
@@ -20,12 +23,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.SuperBuilder;
 
 @NoArgsConstructor
+@SuperBuilder
 @Getter
 @Setter
 @ToString
-@EqualsAndHashCode
 @Entity
 @Table(name = "ROLES")
 public class Role implements Serializable {
@@ -39,10 +43,32 @@ public class Role implements Serializable {
 	
 	@ToString.Exclude
 	@ManyToMany(mappedBy = "roleSet")
-	private Set<User> userSet;
+	private Set<User> userSet = new HashSet<User>();
 	
 	public Role(String rolename) {
 		this.rolename = rolename;
 	}
 
+	@Override
+	public int hashCode() {
+		return Hibernate.getClass(this).hashCode(); // Hibernate recommendation
+		//return Objects.hash(rolename);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (Hibernate.getClass(this) != Hibernate.getClass(obj))
+			return false; // Hibernate recommendation
+		Role other = (Role) obj;
+		return getRolename() != null
+			&& Objects.equals(getRolename(), other.getRolename()); // Hibernate recommendation
+		//return Objects.equals(rolename, other.rolename);
+	}
+
+	
+	
 }
