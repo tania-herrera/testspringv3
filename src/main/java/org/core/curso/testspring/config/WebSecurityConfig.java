@@ -1,5 +1,6 @@
 package org.core.curso.testspring.config;
 
+import org.core.curso.testspring.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -40,8 +41,11 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class WebSecurityConfig {
 	
-//	@Autowired
-//	private IUserService userService;
+	private final IUserService userService;
+
+	WebSecurityConfig(IUserService userService) {
+		this.userService = userService;
+	}
 	
 	@Bean
 	SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
@@ -95,9 +99,7 @@ public class WebSecurityConfig {
 	@Bean
 	DaoAuthenticationProvider daoAuthenticationProvider() {
 		DaoAuthenticationProvider daoAuthenticationProvider =
-				new DaoAuthenticationProvider();
-		daoAuthenticationProvider.setUserDetailsService(this.userService);
-//		daoAuthenticationProvider.setUserDetailsService(userDetailsService());
+				new DaoAuthenticationProvider(this.userService);
 		daoAuthenticationProvider.setPasswordEncoder(passwordEncoderBCrypt());
 		return daoAuthenticationProvider;
 	}

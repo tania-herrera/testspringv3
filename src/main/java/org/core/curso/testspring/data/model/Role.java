@@ -47,6 +47,7 @@ public class Role implements Serializable {
 	
 	public Role(String rolename) {
 		this.rolename = rolename;
+		this.userSet = new HashSet<User>();
 	}
 
 	@Override

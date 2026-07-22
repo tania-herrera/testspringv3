@@ -166,6 +166,29 @@ public class User implements Serializable, UserDetails {
 		this.lockedAccount = lockedAccount;
 		this.expiryDateCredentials = expiryDateCredentials;
 		this.enabled = enabled;
+		this.roleSet = new HashSet<Role>();
+	}
+	
+	public User(
+			@NotNull @Size(min = 3, max = 50, message = "Username must have 3 to 50 characters") String username,
+			@NotNull @Size(max = 100) String password,
+			@Email @Size(min = 3, max = 100, message = "Email must have 3 to 100 characters") String email,
+			@NotNull @Size(max = 100, message = "Fullname must have up to 100 characters") String fullname,
+			@NotNull LocalDate expiryDateAccount, 
+			@NotNull Boolean lockedAccount,
+			@NotNull LocalDate expiryDateCredentials, 
+			@NotNull Boolean enabled,
+			@NotNull Set<Role> roleSet) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.email = email;
+		this.fullname = fullname;
+		this.expiryDateAccount = expiryDateAccount;
+		this.lockedAccount = lockedAccount;
+		this.expiryDateCredentials = expiryDateCredentials;
+		this.enabled = enabled;
+		this.roleSet = roleSet;
 	}
 
 	@Override

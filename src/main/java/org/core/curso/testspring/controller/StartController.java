@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
+import lombok.extern.java.Log;
 import lombok.extern.slf4j.Slf4j;
 
 import static org.springframework.security.web.context.HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY;
@@ -24,12 +25,21 @@ import java.security.Principal;
 import java.util.List;
 
 @Controller
-@Slf4j
-public class StartControllerImpl {
+@Log
+public class StartController {
 
-	@Autowired
-	private ICustomerService customerService;
-
+	@GetMapping({ "/", "/index" })
+	public String indexGet(Principal principal,
+			Model model,
+			HttpServletRequest request) {
+		System.out.println("TRAZA indexGet");
+		log.info("TRAZA indexGet");
+		return "index";
+	}
+	
+	//@GetMapping()
+	
+	/*
 	@GetMapping({ "/contactsGet" })
 	public String contactsGet(Principal principal, Model model, HttpServletRequest request) {
 		System.out.println("TRAZA contactsGet");
@@ -37,7 +47,7 @@ public class StartControllerImpl {
 		//this.injectCommonAttributesInHtmlPage(principal, model, request);
 		return "contacts";
 	}
-
+	*/
 	
 	/*
 	@Override
