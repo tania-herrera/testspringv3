@@ -1,5 +1,6 @@
 package org.core.curso.testspring.controller;
 
+import org.core.curso.testspring.data.dto.UserDTOForLogin;
 import org.core.curso.testspring.service.ICustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -12,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -29,7 +31,8 @@ import java.util.List;
 public class StartController {
 
 	@GetMapping({ "/", "/index" })
-	public String indexGet(Principal principal,
+	public String indexGet(
+			Principal principal,
 			Model model,
 			HttpServletRequest request) {
 		System.out.println("TRAZA indexGet");
@@ -37,7 +40,29 @@ public class StartController {
 		return "index";
 	}
 	
-	//@GetMapping()
+	@GetMapping("/loginGet")
+	public String loginGet(
+			@RequestParam(required = false) String badCredentials,
+			@RequestParam(required = false) String lockedAccount,
+			@RequestParam(required = false) String disabledAccount,
+			@RequestParam(required = false) String credentialsExpired,
+			@RequestParam(required = false) String accountExpired,
+			@RequestParam(required = false) String logoutOk,
+			Principal principal,
+			Model model,
+			HttpServletRequest request) {
+		System.out.println("TRAZA loginGet");
+		// Inject dynamic data into html page
+		model.addAttribute("badCredentials", badCredentials != null);
+		model.addAttribute("lockedAccount", lockedAccount != null);
+		model.addAttribute("disabledAccount", disabledAccount != null);
+		model.addAttribute("credentialsExpired", credentialsExpired != null);
+		model.addAttribute("accountExpired", accountExpired != null);
+		model.addAttribute("logoutOk", logoutOk != null);
+		model.addAttribute("login", new UserDTOForLogin());
+		// 
+		return "loginPage";
+	}
 	
 	/*
 	@GetMapping({ "/contactsGet" })
