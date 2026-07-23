@@ -72,9 +72,9 @@ public class WebSecurityConfig {
                       //.usernameParameter("username")
                       //.passwordParameter("password")
                       .permitAll() // We re permitting all for login page
-                      .failureHandler(loginFailureHandler)
-                      .defaultSuccessUrl("/welcome") // If the login is successful, user will be redirected to this URL.
-                      .failureUrl("/loginGet?badCredentials"); // If the user fails to login, application will redirect the user to this endpoint
+                      .failureHandler(loginFailureHandler) //Si existe clase LoginFailureHandler, no debe existir la siguiente línea .failureUrl("/loginGet?badCredentials") 
+                      //.failureUrl("/loginGet?badCredentials") // If the user fails to login, application will redirect the user to this endpoint
+                      .defaultSuccessUrl("/welcome"); // If the login is successful, user will be redirected to this URL.
                    	})
                 .logout(formLogout -> {
                     formLogout

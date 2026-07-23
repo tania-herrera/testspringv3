@@ -50,23 +50,13 @@ public class StartController {
 	
 	@GetMapping("/loginGet")
 	public String loginGet(
-			@RequestParam(required = false) String badCredentials,
-			@RequestParam(required = false) String lockedAccount,
-			@RequestParam(required = false) String disabledAccount,
-			@RequestParam(required = false) String credentialsExpired,
-			@RequestParam(required = false) String accountExpired,
-			@RequestParam(required = false) String logoutOk,
+			@RequestParam(required = false) String error,
 			Principal principal,
 			Model model,
 			HttpServletRequest request) {
 		System.out.println("TRAZA loginGet");
 		// Inject dynamic data into html page
-		model.addAttribute("badCredentials", badCredentials != null);
-		model.addAttribute("lockedAccount", lockedAccount != null);
-		model.addAttribute("disabledAccount", disabledAccount != null);
-		model.addAttribute("credentialsExpired", credentialsExpired != null);
-		model.addAttribute("accountExpired", accountExpired != null);
-		model.addAttribute("logoutOk", logoutOk != null);
+		model.addAttribute("error", error);
 		model.addAttribute("login", new UserDTOForLogin());
 		// 
 		return "loginPage";

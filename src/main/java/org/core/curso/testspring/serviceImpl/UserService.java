@@ -22,15 +22,13 @@ import lombok.extern.slf4j.Slf4j;
 public class UserService implements IUserService {
 
     private final LoginFailureHandler loginFailureHandler;
-	
 	private final IUserRepository repo;
-	
-	@Autowired
-	private IRoleService roleService = new RoleService();
+	private final IRoleService roleService;
 
-	UserService(IUserRepository repo, LoginFailureHandler loginFailureHandler) {
+	UserService(IUserRepository repo, LoginFailureHandler loginFailureHandler, IRoleService roleService) {
 		this.repo = repo;
 		this.loginFailureHandler = loginFailureHandler;
+		this.roleService = roleService;
 	}
 
 	@Override
@@ -57,12 +55,12 @@ public class UserService implements IUserService {
 	@Override
 	public void saveDataTest() {
 		repo.save(new User("jag", 
-				"$2a$12$0kgjBbMhDUFy2BR8I4RZBe5VL2VmF41HmYVmQijspL0uwJ50dgV6S", 
+				"$2a$12$xqvz8G5CWU.VLhyXigPn4.B5.TINHXFbHuBmYClHjRJwjVjRD41kW", 
 				"jag@gmail.com", 
 				"José A. Gutiérrez",
-				LocalDate.now().plusDays(2),
-				false,
-				LocalDate.now().plusDays(5),
+				LocalDate.now().plusDays(-2),
+				true,
+				LocalDate.now().plusDays(-5),
 				false,
 				Set.of(roleService.findById("ADMIN").get(),
 						roleService.findById("CUSTOMER").get())

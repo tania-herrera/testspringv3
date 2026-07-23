@@ -13,8 +13,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class CustomerService implements ICustomerService {
 	
-	@Autowired
-	private ICustomerRepository repo;
+	private final ICustomerRepository repo;
+
+	public CustomerService(ICustomerRepository repo) {
+		super();
+		this.repo = repo;
+	}
 
 	@Override
 	public List<Customer> findAll() {

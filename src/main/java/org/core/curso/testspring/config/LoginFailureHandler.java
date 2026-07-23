@@ -24,33 +24,35 @@ public class LoginFailureHandler extends SimpleUrlAuthenticationFailureHandler {
 			HttpServletResponse response,
 			AuthenticationException exception) throws IOException, ServletException {
 		//
+		System.out.println("TRAZA: entrando en LoginFailure Handler");
+		System.out.println("TRAZA: excepción: " + exception.getClass().getName());
 		//super.onAuthenticationFailure(request, response, exception);
-		String url = "/loginGet?error";
+		String url = "/loginGet?error=UnknownError";
 		
 		if (exception instanceof BadCredentialsException) {
-			url = "/loginGet?badCredentials";
+			url = "/loginGet?error=badCredentials";
 		}
 		else {
 			if (exception instanceof LockedException) {
-				url = "/loginGet?lockedAccount";
+				url = "/loginGet?error=lockedAccount";
 			}
 			else {
 				if (exception instanceof DisabledException) {
-					url = "/loginGet?disabledAccount";
+					url = "/loginGet?error=disabledAccount";
 				}
 				else {
 					if (exception instanceof CredentialsExpiredException) {
-						url = "/loginGet?credentialExpired";
+						url = "/loginGet?error=credentialsExpired";
 					}
 					else {
 						if (exception instanceof AccountExpiredException) {
-							url = "/loginGet?accountExpired";
+							url = "/loginGet?error=accountExpired";
 						}
 					}
 				}
 			}
-			getRedirectStrategy().sendRedirect(request, response, url);
 		}
+		getRedirectStrategy().sendRedirect(request, response, url);
 	}
 	
 }

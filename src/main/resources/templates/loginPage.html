@@ -31,43 +31,43 @@
                 Thousands of people would like to <strong>learn how to develop</strong> an application like this!
               </h4>
 
-              <div th:if="${param.logoutOk}">
+              <div th:if="${error == 'logoutOk'}">
               	<p class="h3 card-text text-center" style="color:green" 
               		th:text="'Logout successful! You can log back in.'">
               	</p>
               </div>
                             
-              <div th:if="${param.loginError}">
+              <div th:if="${error == 'loginError'}">
               	<p class="h3 card-text text-center" style="color:red" 
               		th:text="'Login error!!! Please contact the administrator.'">
               	</p>
               </div>
               	
-              <div th:if="${param.badCredentials}">
+              <div th:if="${error == 'badCredentials'}">
               	<p class="h3 card-text text-center" style="color:yellow" 
               		th:text="'Bad credentials!!! Try again.'">
               	</p>
               </div>
               
-              <div th:if="${param.lockedAccount}">
+              <div th:if="${error == 'lockedAccount'}">
               	<p class="h3 card-text text-center" style="color:red" 
               		th:text="'Locked account!!! Please contact the administrator.'">
               	</p>
               </div>
 
-              <div th:if="${param.disabledAccount}">
+              <div th:if="${error == 'disabledAccount'}">
               	<p class="h3 card-text text-center" style="color:yellow" 
               		th:text="'Disabled account!!! Please contact the administrator.'">
               	</p>
               </div>
 
-              <div th:if="${param.credentialsExpired}">
+              <div th:if="${error == 'credentialsExpired'}">
               	<p class="h3 card-text text-center" style="color:red" 
               		th:text="'Credentials expired!!! Please contact the administrator.'">
               	</p>
               </div>
               
-              <div th:if="${param.accountExpired}">
+              <div th:if="${error == 'accountExpired'}">
               	<p class="h3 card-text text-center" style="color:red" 
               		th:text="'Account expired!!! Please contact the administrator.'">
               	</p>

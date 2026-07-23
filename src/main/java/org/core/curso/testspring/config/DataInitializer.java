@@ -14,21 +14,23 @@ import lombok.extern.java.Log;
 //@Profile("dev")
 public class DataInitializer {
 	
-	@Autowired
-	private IRoleService roleService;
+	private final IRoleService roleService;
+	private final IUserService userService;
+	private final ICustomerService customerService;
 	
-	@Autowired
-	private IUserService userService;
-
-	@Autowired
-	private ICustomerService customerService;
+	public DataInitializer(IRoleService roleService, IUserService userService, ICustomerService customerService) {
+		super();
+		this.roleService = roleService;
+		this.userService = userService;
+		this.customerService = customerService;
+	}
 
 	public void initialize() {
 		log.info("Initializing H2 Database...");
 
 		roleService.saveDataTest();
 		userService.saveDataTest();
-//		customerService.saveDataTest();
+		customerService.saveDataTest();
 		
 		log.info("Initialization finished.");
 	}
