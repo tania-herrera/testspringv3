@@ -2,6 +2,7 @@ package org.core.curso.testspring.controller;
 
 import org.core.curso.testspring.data.dto.UserDTOForLogin;
 import org.core.curso.testspring.service.ICustomerService;
+import org.core.curso.testspring.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -29,7 +30,14 @@ import java.util.List;
 @Controller
 @Log
 public class StartController {
-
+	
+	private final IUserService userService;
+	
+	public StartController(IUserService userService) {
+		super();
+		this.userService = userService;
+	}
+	
 	@GetMapping({ "/", "/index" })
 	public String indexGet(
 			Principal principal,
@@ -63,6 +71,41 @@ public class StartController {
 		// 
 		return "loginPage";
 	}
+	
+	@GetMapping({ "/welcome", "/home" })
+	public String welcomeGet(
+			Principal principal,
+			Model model,
+			HttpServletRequest request) {
+		System.out.println("TRAZA welcomeGet");
+		model.addAttribute("username", principal.getName());
+		model.addAttribute("roles", userService.findByUsername(principal.getName()).get().getRoleSet());
+		return "welcome";
+	}
+
+	@GetMapping({ "/logoutGet" })
+	public String logoutGet(
+			Principal principal,
+			Model model,
+			HttpServletRequest request) {
+		System.out.println("TRAZA logoutGet");
+		//
+		//return "loginPage";
+		return "redirect:/loginGet?logoutOk";
+	}
+	
+	@GetMapping({ "/aboutGet" })
+	
+	public String aboutGet(
+			Principal principal,
+			Model model,
+			HttpServletRequest request) {
+		System.out.println("TRAZA aboutGet");
+		model.addAttribute("fullname", 
+			userService.findByUsername(principal.getName()).get().getFullname());
+		return "about";
+	}
+	
 	
 	/*
 	@GetMapping({ "/contactsGet" })

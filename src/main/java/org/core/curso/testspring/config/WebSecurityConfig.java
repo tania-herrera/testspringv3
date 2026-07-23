@@ -42,12 +42,11 @@ import lombok.extern.slf4j.Slf4j;
 public class WebSecurityConfig {
 	
 	private final IUserService userService;
+	private final LoginFailureHandler loginFailureHandler;
 	
-	@Autowired
-	private LoginFailureHandler loginFailureHandler;
-
-	WebSecurityConfig(IUserService userService) {
+	WebSecurityConfig(IUserService userService, LoginFailureHandler loginFailureHandler) {
 		this.userService = userService;
+		this.loginFailureHandler = loginFailureHandler;
 	}
 	
 	@Bean
@@ -61,7 +60,7 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests((authorize) -> authorize
 			        	.requestMatchers("/", "/index", "/loginGet", "/h2/**").permitAll()
 			        	.requestMatchers("/static", "/img/**").permitAll()
-			        	.requestMatchers("/welcome").authenticated()
+			        	.requestMatchers("/home", "/welcome").authenticated()
                         .anyRequest().authenticated())
 //                .formLogin(Customizer.withDefaults());	
                 .authenticationProvider(daoAuthenticationProvider())

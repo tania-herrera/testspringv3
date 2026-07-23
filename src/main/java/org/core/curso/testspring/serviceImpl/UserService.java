@@ -15,7 +15,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class UserService implements IUserService {
 
     private final LoginFailureHandler loginFailureHandler;
@@ -54,12 +57,12 @@ public class UserService implements IUserService {
 	@Override
 	public void saveDataTest() {
 		repo.save(new User("jag", 
-				"$2a$12$.uHv/TRKP9uA.rpzUERB4unKcKM/AmLh5UZW4p1P6M5/Sxb4UZuXq", 
+				"$2a$12$0kgjBbMhDUFy2BR8I4RZBe5VL2VmF41HmYVmQijspL0uwJ50dgV6S", 
 				"jag@gmail.com", 
 				"José A. Gutiérrez",
-				LocalDate.now().plusDays(-2),
+				LocalDate.now().plusDays(2),
 				false,
-				LocalDate.now().plusDays(-5),
+				LocalDate.now().plusDays(5),
 				false,
 				Set.of(roleService.findById("ADMIN").get(),
 						roleService.findById("CUSTOMER").get())
@@ -73,7 +76,7 @@ public class UserService implements IUserService {
 				.expiryDateCredentials(LocalDate.now().plusDays(5))
 				.lockedAccount(false)
 				.enabled(true)
-				.password("$2a$12$fINwy2MFUfMzlSIqi3eIXeoh2qKrOf.JIn8/Qq7ontp.Mtia8jSI2")
+				.password("$2a$12$dR4tDCQBUFIfmr3.NslvsuGrPpYofax3KnBgAbvRpON6GJ.sSAqce")
 				.roleSet(Set.of(roleService.findById("MANAGER").get(),
 								roleService.findById("CUSTOMER").get()))
 				.build()
@@ -86,7 +89,7 @@ public class UserService implements IUserService {
 				.expiryDateCredentials(LocalDate.now().plusDays(5))
 				.lockedAccount(false)
 				.enabled(true)
-				.password("$2a$12$pOtzLXBuqdINw7wM3spdc.4P8VULWYyc5qIFn99ozxoRJbL3H.oYG")
+				.password("$2a$12$OOhpBXUplTFhEx/Yp6rDxOWJ7Q75CzyWWROl.P7h2kdawZnDx9UXe")
 				.roleSet(Set.of(roleService.findById("USER").get(),
 						roleService.findById("ADMIN").get()))
 				.build()
@@ -127,11 +130,11 @@ public class UserService implements IUserService {
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		Optional<User> userOpt = this.findByUsername(username);
-		System.out.println("TRAZA 1: " + username);
 		if (userOpt.isEmpty()) {
+			log.warn("Usuario no identificado: " + username);
 			throw new UsernameNotFoundException(username);
 		}
-		System.out.println("TRAZA 2: " + userOpt.get().getFullname());
+		log.info("Usuario autenticado: " + username + " -> " + userOpt.get().getFullname());
 		return userOpt.get();
 	}
 
