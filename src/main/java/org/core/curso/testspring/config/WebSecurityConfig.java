@@ -42,6 +42,9 @@ import lombok.extern.slf4j.Slf4j;
 public class WebSecurityConfig {
 	
 	private final IUserService userService;
+	
+	@Autowired
+	private LoginFailureHandler loginFailureHandler;
 
 	WebSecurityConfig(IUserService userService) {
 		this.userService = userService;
@@ -61,6 +64,7 @@ public class WebSecurityConfig {
 			        	.requestMatchers("/welcome").authenticated()
                         .anyRequest().authenticated())
 //                .formLogin(Customizer.withDefaults());	
+                .authenticationProvider(daoAuthenticationProvider())
         
                 .formLogin(formLogin -> {
                     formLogin
@@ -69,6 +73,7 @@ public class WebSecurityConfig {
                       //.usernameParameter("username")
                       //.passwordParameter("password")
                       .permitAll() // We re permitting all for login page
+                      .failureHandler(loginFailureHandler)
                       .defaultSuccessUrl("/welcome") // If the login is successful, user will be redirected to this URL.
                       .failureUrl("/loginGet?badCredentials"); // If the user fails to login, application will redirect the user to this endpoint
                    	})

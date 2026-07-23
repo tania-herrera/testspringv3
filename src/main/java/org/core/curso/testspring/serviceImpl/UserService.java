@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
+import org.core.curso.testspring.config.LoginFailureHandler;
 import org.core.curso.testspring.data.model.User;
 import org.core.curso.testspring.data.repository.IUserRepository;
 import org.core.curso.testspring.service.IRoleService;
@@ -16,14 +17,17 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserService implements IUserService {
+
+    private final LoginFailureHandler loginFailureHandler;
 	
 	private final IUserRepository repo;
 	
 	@Autowired
 	private IRoleService roleService = new RoleService();
 
-	UserService(IUserRepository repo) {
+	UserService(IUserRepository repo, LoginFailureHandler loginFailureHandler) {
 		this.repo = repo;
+		this.loginFailureHandler = loginFailureHandler;
 	}
 
 	@Override
@@ -53,9 +57,9 @@ public class UserService implements IUserService {
 				"$2a$12$mfNQXKISZro4CoP1CKVKUuQ8y8ijFR4K97Sgp1hPJ0gktwNYIRk6q", 
 				"jag@gmail.com", 
 				"José A. Gutiérrez",
-				LocalDate.now().plusDays(2),
+				LocalDate.now().plusDays(-2),
 				false,
-				LocalDate.now().plusDays(5),
+				LocalDate.now().plusDays(-5),
 				false,
 				Set.of(roleService.findById("ADMIN").get(),
 						roleService.findById("CUSTOMER").get())
@@ -123,9 +127,11 @@ public class UserService implements IUserService {
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		Optional<User> userOpt = this.findByUsername(username);
+		System.out.println("TRAZA 1: " + username);
 		if (userOpt.isEmpty()) {
 			throw new UsernameNotFoundException(username);
 		}
+		System.out.println("TRAZA 2: " + userOpt.get().getFullname());
 		return userOpt.get();
 	}
 
