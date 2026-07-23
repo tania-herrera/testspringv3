@@ -54,7 +54,7 @@ public class UserService implements IUserService {
 	@Override
 	public void saveDataTest() {
 		repo.save(new User("jag", 
-				"$2a$12$mfNQXKISZro4CoP1CKVKUuQ8y8ijFR4K97Sgp1hPJ0gktwNYIRk6q", 
+				"$2a$12$.uHv/TRKP9uA.rpzUERB4unKcKM/AmLh5UZW4p1P6M5/Sxb4UZuXq", 
 				"jag@gmail.com", 
 				"José A. Gutiérrez",
 				LocalDate.now().plusDays(-2),
@@ -73,7 +73,7 @@ public class UserService implements IUserService {
 				.expiryDateCredentials(LocalDate.now().plusDays(5))
 				.lockedAccount(false)
 				.enabled(true)
-				.password("$2a$12$j0uGmLmCskZTQmcAr4qQteeHpZFITnDBdtrJ5FASd4c44peS.St.6")
+				.password("$2a$12$fINwy2MFUfMzlSIqi3eIXeoh2qKrOf.JIn8/Qq7ontp.Mtia8jSI2")
 				.roleSet(Set.of(roleService.findById("MANAGER").get(),
 								roleService.findById("CUSTOMER").get()))
 				.build()
