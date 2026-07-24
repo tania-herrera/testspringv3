@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	>
+
+
+  <div th:replace="~{standardLayouts/head :: head1}">
+  	AQUI DEBERIA SALIR EL head
+  </div>
+
+  <body>
+
+  <div class="pb-5 pt-5 bg-dark text-light min-vw-100 min-vh-100">
+  
+    <div th:replace="~{standardLayouts/navbar :: navbar1}">
+  		AQUI DEBERIA SALIR EL navbar
+  	</div>
+  	
+    <section class="pb-5 pt-5 bg-dark text-light min-vw-100 min-vh-100">
+      <div class="container">
+        <div class="row text-center ">
+          <div class="col-12 col-md-8 col-lg-7">
+            <h3 class="fw-bold display-4 text-white">Customer view</h3>
+          </div>
+        </div>
+        
+       <div class="row pt-4">
+          <div class="col-12">
+             <div th:object="${customer}">
+            
+              <div class="row">
+				<div class="col input-group mb-2">
+				  <span class="input-group-text bg-secondary text-light" id="inputGroup-sizing-default">Name</span>
+				  <input readonly th:value="${customer.name}" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+				</div>
+             
+				<div class="col input-group mb-2">
+				  <span class="input-group-text bg-secondary text-light" id="inputGroup-sizing-default">VAT Number</span>
+                  <input readonly th:value="${customer.vatNumber}" type="text" class="form-control" placeholder="Vat number">
+                </div>
+
+				<div class="col input-group mb-2">
+				  <span class="input-group-text bg-secondary text-light" id="inputGroup-sizing-default">Phone</span>
+                  <input readonly th:value="${customer.phone}" type="text" class="form-control" placeholder="Phone">
+                </div>
+
+              </div>
+
+              <div class="row mt-4">
+				<div class="input-group mb-2">
+				  <span class="input-group-text bg-secondary text-light" id="inputGroup-sizing-default">Address</span>
+                  <input readonly th:value="${customer.address}" type="text" class="form-control" placeholder="Address">
+                </div>
+              </div>
+              
+              <div class="row mt-4">
+                <div class="col">
+                   	<div th:if="${customer.getContactList().size() != 0}">
+					<p th:text="'This customer has following contacts:'">                   		
+                   	<ul>
+                   		<li th:each="contact : ${customer.getContactList()}"
+                   			th:value="${contact.getId()}"
+                   			th:text="${contact.getName()} + ' > ' 
+                   				   + ${contact.getPhone()} + ' >> '
+                   				   + ${contact.getObservations()}">                    		
+                   		</li>
+                   	</ul>
+                   	</div> 
+           	        <p th:unless="${customer.getContactList().size() != 0}"
+                  		th:text="'This customer has not contacts'">
+                   	</p>
+                </div>     		              		
+			  </div>
+
+              <div class="row mt-4">
+			    <div class="col text-center">
+ 	               <a type="button" th:href="@{/customerListGet}"
+    	              class="btn btn-success w-100 btn-round mb-3 btn-rised">
+        	          Back 
+            	    </a>
+            	</div>
+              
+                <div class="col text-center">
+ 	               <a type="button" th:href="@{/customer/deleteConfirmed/} + ${customer.getId()}"
+    	              class="btn btn-danger w-100 btn-round mb-3 btn-rised">
+        	          Delete 
+            	    </a>
+            	</div>
+              </div>
+                          
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <div th:replace="~{standardLayouts/footer :: footer1}">
+  		AQUI DEBERIA SALIR EL footer
+  	</div>  	
+  	
+  	<div th:replace="~{standardLayouts/script :: script1}">
+  		AQUI DEBERIA SALIR EL script
+  	</div>
+
+  </div>
+  
+  </body>
+
+</html>
