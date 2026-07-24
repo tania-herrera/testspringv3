@@ -27,7 +27,7 @@ public class LoginFailureHandler extends SimpleUrlAuthenticationFailureHandler {
 		System.out.println("TRAZA: entrando en LoginFailure Handler");
 		System.out.println("TRAZA: excepción: " + exception.getClass().getName());
 		//super.onAuthenticationFailure(request, response, exception);
-		String url = "/loginGet?error=UnknownError";
+		String url = "/loginGet?error=unknownError";
 		
 		if (exception instanceof BadCredentialsException) {
 			url = "/loginGet?error=badCredentials";

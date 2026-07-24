@@ -2,12 +2,10 @@ package org.core.curso.testspring.serviceImpl;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Stream;
 
 import org.core.curso.testspring.data.model.Customer;
 import org.core.curso.testspring.data.repository.ICustomerRepository;
 import org.core.curso.testspring.service.ICustomerService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -116,7 +114,7 @@ public class CustomerService implements ICustomerService {
 	}
 
 	@Override
-	public void deleteById(Integer id) {
+	public void deleteById(Long id) {
 		repo.deleteById(id);
 	}
 	
@@ -136,7 +134,7 @@ public class CustomerService implements ICustomerService {
 	}
 
 	@Override
-	public Boolean existsById(Integer id) {
+	public Boolean existsById(Long id) {
 		return repo.existsById(id);
 	}
 
@@ -146,7 +144,7 @@ public class CustomerService implements ICustomerService {
 	}
 
 	@Override
-	public Optional<Customer> findById(Integer id) {
+	public Optional<Customer> findById(Long id) {
 		return repo.findById(id);
 	}
 

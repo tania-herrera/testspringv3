@@ -54,7 +54,7 @@ public class StartController {
 			Principal principal,
 			Model model,
 			HttpServletRequest request) {
-		System.out.println("TRAZA loginGet");
+		System.out.println("TRAZA loginGet " + error);
 		// Inject dynamic data into html page
 		model.addAttribute("error", error);
 		model.addAttribute("login", new UserDTOForLogin());
@@ -81,16 +81,16 @@ public class StartController {
 		System.out.println("TRAZA logoutGet");
 		//
 		//return "loginPage";
-		return "redirect:/loginGet?logoutOk";
+		return "redirect:/loginGet?error=logoutOk";
 	}
 	
 	@GetMapping({ "/aboutGet" })
-	
 	public String aboutGet(
 			Principal principal,
 			Model model,
 			HttpServletRequest request) {
 		System.out.println("TRAZA aboutGet");
+		model.addAttribute("username", principal.getName());
 		model.addAttribute("fullname", 
 			userService.findByUsername(principal.getName()).get().getFullname());
 		return "about";

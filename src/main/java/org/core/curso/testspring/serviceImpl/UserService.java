@@ -58,10 +58,10 @@ public class UserService implements IUserService {
 				"$2a$12$xqvz8G5CWU.VLhyXigPn4.B5.TINHXFbHuBmYClHjRJwjVjRD41kW", 
 				"jag@gmail.com", 
 				"José A. Gutiérrez",
-				LocalDate.now().plusDays(-2),
-				true,
-				LocalDate.now().plusDays(-5),
+				LocalDate.now().plusDays(2),
 				false,
+				LocalDate.now().plusDays(5),
+				true,
 				Set.of(roleService.findById("ADMIN").get(),
 						roleService.findById("CUSTOMER").get())
 				));
@@ -70,10 +70,10 @@ public class UserService implements IUserService {
 				.username("ana")
 				.email("ana@gmail.com")
 				.fullname("Ana Sanz")
-				.expiryDateAccount(LocalDate.now().plusDays(2))
-				.expiryDateCredentials(LocalDate.now().plusDays(5))
+				.expiryDateAccount(LocalDate.now().plusDays(-2))
+				.expiryDateCredentials(LocalDate.now().plusDays(-5))
 				.lockedAccount(false)
-				.enabled(true)
+				.enabled(false)
 				.password("$2a$12$dR4tDCQBUFIfmr3.NslvsuGrPpYofax3KnBgAbvRpON6GJ.sSAqce")
 				.roleSet(Set.of(roleService.findById("MANAGER").get(),
 								roleService.findById("CUSTOMER").get()))

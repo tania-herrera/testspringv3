@@ -11,16 +11,16 @@ public interface ICustomerService {
 
 	public void truncate();
 	public void deleteAll();
-	public void deleteById(Integer id);
+	public void deleteById(Long id);
 	public void delete(Customer customer);
 
 	public void save(Customer customer);
 	public void saveDataTest();
 	
-	public Boolean existsById(Integer id);
+	public Boolean existsById(Long id);
 	public Long count();
 	
-	public Optional<Customer> findById(Integer id);
+	public Optional<Customer> findById(Long id);
 	public List<Customer> findByName(String name);
 	public List<Customer> findByAgeBetween(Integer minAge, Integer maxAge);
 	public List<Customer> findByNameAndAge(String name, Integer age);

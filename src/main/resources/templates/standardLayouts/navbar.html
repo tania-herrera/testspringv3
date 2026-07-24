@@ -24,24 +24,38 @@
                   class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item me-3">
-              <a class="nav-link" href="about_OLD.html">About</a>
+              <a class="nav-link" th:href="@{/aboutGet}">About</a>
             </li>
             <li class="nav-item me-3">
               <a class="nav-link" th:href="@{/servicesGet}">Services</a>
             </li>
-            <li class="nav-item me-3">
-              <a class="nav-link" href="#">Our Work</a>
-            </li>
-            <li class="nav-item me-3">
+             <li class="nav-item me-3">
               <a class="nav-link" th:href="@{/contactsGet}">Contacts</a>
             </li>
+            
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" id="navbarDropdown" role="button"
+                data-bs-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">Data
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" th:href="@{/customerList}">Customers</a>
+                <a class="dropdown-item" href="#">Products</a>
+                <a class="dropdown-item" href="#">Providers</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Users</a>
+              </div>
+            </li>
+            
+            
             <li class="nav-item dropdown">
               <a class="nav-link" href="#" id="navbarDropdown" role="button"
                 data-bs-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
                 <img class="rounded-circle u-box-shadow-sm me-2" width="25"
                   height="25" src=" https://dummyimage.com/100/007bff/efefef"
-                  alt="Htmlstream" th:text="${username} "><i class="fa fa-angle-down   "></i>
+                  alt="Htmlstream" th:text="${username} + ' '"><i class="fa fa-angle-down   "></i>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#">Profile</a>
