@@ -23,12 +23,12 @@
       <div class="container">
         <div class="row text-center justify-content-center">
           <div class="col-12 col-md-8 col-lg-7">
-            <h3 class="fw-bold display-4 text-white">Customer update</h3>
+            <h3 class="fw-bold display-4 text-white">Customer add</h3>
           </div>
         </div>
         <div class="row pt-4">
           <div class="col-12">
-            <form th:object="${customer}" method="POST" th:action="@{/customer/updatePost}">
+            <form th:object="${customer}" method="POST" th:action="@{/customerAddPost}">
             
               <input th:field="*{id}" type="hidden">
             
@@ -39,21 +39,22 @@
                    	th:field="*{name}">
                 </div>
                 <div class="col-12 col-md mt-4 mt-md-0">
-                  <label>VAT number</label>
-                  <input type="text" class="form-control" placeholder="Vat number"
-                  	th:field="*{vatNumber}">
+                  <label>Age</label>
+                  <input type="number" class="form-control" placeholder="Age"
+                  	th:field="*{age}">
                 </div>
                 <div class="col-12 col-md mt-4 mt-md-0">
-                  <label>Phone</label>
-                  <input type="text" class="form-control" placeholder="Phone"
-                    th:field="*{phone}">
+                  <label>Total Purchases</label>
+                  <input type="text" pattern="^\d{1,6}([.,]\d{1,2})?$"
+                    class="form-control" placeholder="Total Purchases"
+                    th:field="*{totalPurchases}">
                 </div>
               </div>
               <div class="row mt-4">
                 <div class="col">
-                  <label>Address</label>
-                  <input type="text" class="form-control" placeholder="Address"
-                    th:field="*{address}">
+                  <label>Card Number</label>
+                  <input type="text" class="form-control" placeholder="Card Number"
+                    th:field="*{cardNumber}">
                 </div>
               </div>
               
@@ -69,7 +70,7 @@
                 </div>
                 
                 <div class="col text-center">
-	               <a type="button" th:href="@{/customerListGet}"
+	               <a type="button" th:href="@{/customerList}"
     	              class="btn btn-primary w-100 btn-round mb-3 btn-rised">
         	          Back
             	   </a>
@@ -91,6 +92,7 @@
   	</div>
 
   </div>
+  
   </body>
 
 </html>

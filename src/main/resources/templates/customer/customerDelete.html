@@ -33,38 +33,38 @@
               <div class="row">
 				<div class="col input-group mb-2">
 				  <span class="input-group-text bg-secondary text-light" id="inputGroup-sizing-default">Name</span>
-				  <input readonly th:value="${customer.name}" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+				  <input readonly th:value="${customer.getName()}" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
 				</div>
              
 				<div class="col input-group mb-2">
-				  <span class="input-group-text bg-secondary text-light" id="inputGroup-sizing-default">VAT Number</span>
-                  <input readonly th:value="${customer.vatNumber}" type="text" class="form-control" placeholder="Vat number">
+				  <span class="input-group-text bg-secondary text-light" id="inputGroup-sizing-default">Age</span>
+                  <input readonly th:value="${customer.getAge()}" type="text" class="form-control" placeholder="AGe">
                 </div>
 
 				<div class="col input-group mb-2">
-				  <span class="input-group-text bg-secondary text-light" id="inputGroup-sizing-default">Phone</span>
-                  <input readonly th:value="${customer.phone}" type="text" class="form-control" placeholder="Phone">
+				  <span class="input-group-text bg-secondary text-light" id="inputGroup-sizing-default">Total Purchases</span>
+                  <input readonly th:value="${customer.getTotalPurchases()}" type="text" class="form-control" placeholder="Total Purchases">
                 </div>
 
               </div>
 
               <div class="row mt-4">
 				<div class="input-group mb-2">
-				  <span class="input-group-text bg-secondary text-light" id="inputGroup-sizing-default">Address</span>
-                  <input readonly th:value="${customer.address}" type="text" class="form-control" placeholder="Address">
+				  <span class="input-group-text bg-secondary text-light" id="inputGroup-sizing-default">Card Number</span>
+                  <input readonly th:value="${customer.getCardNumber()}" type="text" class="form-control" placeholder="Card Number">
                 </div>
               </div>
               
               <div class="row mt-4">
 			    <div class="col text-center">
- 	               <a type="button" th:href="@{/customerListGet}"
+ 	               <a type="button" th:href="@{/customerList}"
     	              class="btn btn-success w-100 btn-round mb-3 btn-rised">
         	          Back 
             	    </a>
             	</div>
               
                 <div class="col text-center">
- 	               <a type="button" th:href="@{/customer/deleteConfirmed/} + ${customer.getId()}"
+ 	               <a type="button" th:href="@{/customerDeletePost/} + ${customer.getId()}"
     	              class="btn btn-danger w-100 btn-round mb-3 btn-rised">
         	          Delete 
             	    </a>
