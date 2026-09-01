@@ -33,6 +33,7 @@ public class CustomerController {
 			Model model,
 			HttpServletRequest request) {
 		log.info("TRAZA: entrando en customerDeleteGet");
+		model.addAttribute("username", principal.getName());
 		model.addAttribute("customer", customerService.findById(id).get());
 		return "customer/customerDelete";
 	}
@@ -55,6 +56,7 @@ public class CustomerController {
 			Model model,
 			HttpServletRequest request) {
 		log.info("TRAZA: entrando en customerAddGet");
+		model.addAttribute("username", principal.getName());
 		model.addAttribute("customer", new Customer());
 		return "customer/customerAdd";
 	}
@@ -85,6 +87,7 @@ public class CustomerController {
 			Model model,
 			HttpServletRequest request) {
 		log.info("TRAZA: entrando en customerUpdateGet");
+		model.addAttribute("username", principal.getName());
 		model.addAttribute("customer", customerService.findById(id).get());
 		return "customer/customerUpdate";
 	}

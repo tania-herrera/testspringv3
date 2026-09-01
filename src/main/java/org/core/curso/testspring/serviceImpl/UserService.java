@@ -54,6 +54,18 @@ public class UserService implements IUserService {
 
 	@Override
 	public void saveDataTest() {
+		repo.save(new User("curso", 
+				"$2a$12$oCExzQ1HgQUteuNrQTCCKOeDDeK4hsmAWtKJHcM7cYHH5wxprMwku", 
+				"curso@gmail.com", 
+				"Usuario del curso",
+				LocalDate.now().plusDays(2),
+				false,
+				LocalDate.now().plusDays(5),
+				true,
+				Set.of(roleService.findById("ADMIN").get(),
+						roleService.findById("CUSTOMER").get())
+				));
+		
 		repo.save(new User("jag", 
 				"$2a$12$xqvz8G5CWU.VLhyXigPn4.B5.TINHXFbHuBmYClHjRJwjVjRD41kW", 
 				"jag@gmail.com", 
