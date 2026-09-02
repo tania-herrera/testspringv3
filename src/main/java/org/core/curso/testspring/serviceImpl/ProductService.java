@@ -3,7 +3,9 @@ package org.core.curso.testspring.serviceImpl;
 import java.util.List;
 import java.util.Optional;
 
+import org.core.curso.testspring.data.model.Family;
 import org.core.curso.testspring.data.model.Product;
+import org.core.curso.testspring.data.model.Valuation;
 import org.core.curso.testspring.data.repository.IProductRepository;
 import org.core.curso.testspring.service.IFamilyService;
 import org.core.curso.testspring.service.IProductService;
@@ -56,23 +58,25 @@ public class ProductService implements IProductService {
 
 	@Override
 	public void saveDataTest() {
+		// Web con imágenes de productos:
+		// https://mdbootstrap.com/img/new/ecommerce/horizontal/084.jpg
 		repo.save(
 				Product.builder()
-					.id(1L)
-					.name("Portátil")
-					.URL("")
+//					.id(1L)
+					.name("Ratón")
+					.URL("https://mdbootstrap.com/img/new/ecommerce/horizontal/008.jpg")
 					.price(500.00)
 					.stock(10)
 					.discount(0.0)
-					.valuation(this.valuationService.findById(4L).get())
+					.valuation(this.valuationService.findById(2L).get())
 					.family(this.familyService.findById(2L).get())
 				.build()
 		);
 		repo.save(
 				Product.builder()
-					.id(2L)
+//					.id(2L)
 					.name("Limones")
-					.URL("")
+					.URL("https://mdbootstrap.com/img/new/ecommerce/horizontal/084.jpg")
 					.price(5.00)
 					.stock(200)
 					.discount(10.0)
@@ -83,9 +87,9 @@ public class ProductService implements IProductService {
 		repo.save(
 				Product.builder()
 				.family(this.familyService.findById(3L).get())
-				.id(3L)
+//				.id(3L)
 				.name("Zapatos")
-				.URL("")
+				.URL("https://mdbootstrap.com/img/new/ecommerce/horizontal/089.jpg")
 				.price(50.00)
 				.stock(100)
 				.discount(15.0)

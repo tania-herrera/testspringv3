@@ -49,7 +49,7 @@ public class DataInitializer {
 		customerService.saveDataTest();
 		valuationService.saveDataTest();
 		familyService.saveDataTest();
-//		productService.saveDataTest();
+		productService.saveDataTest();
 		
 		log.info("Initialization finished.");
 	}
