@@ -100,8 +100,7 @@ public class UserService implements IUserService {
 				.lockedAccount(false)
 				.enabled(true)
 				.password("$2a$12$OOhpBXUplTFhEx/Yp6rDxOWJ7Q75CzyWWROl.P7h2kdawZnDx9UXe")
-				.roleSet(Set.of(roleService.findById("USER").get(),
-						roleService.findById("ADMIN").get()))
+				.roleSet(Set.of(roleService.findById("MANAGER").get()))
 				.build()
 				);
 		

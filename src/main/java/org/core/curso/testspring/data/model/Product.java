@@ -1,5 +1,8 @@
 package org.core.curso.testspring.data.model;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -56,10 +59,12 @@ public class Product {
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "valuationId", referencedColumnName = "id", nullable = false)
+	@OnDelete(action = OnDeleteAction.RESTRICT)
 	private Valuation valuation;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "familyId", referencedColumnName = "id", nullable = false)
+	@OnDelete(action = OnDeleteAction.RESTRICT)
 	private Family family;
 	
 }

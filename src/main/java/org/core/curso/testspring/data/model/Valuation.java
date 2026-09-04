@@ -1,9 +1,13 @@
 package org.core.curso.testspring.data.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.DecimalMax;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotNull;
@@ -30,6 +34,10 @@ public class Valuation {
     @Size(min=1, max=50, message="Campo 'name' debe tener entre 1 y 50 caracteres")
 	private String name;
 	
+	@ToString.Exclude
+	@OneToMany(mappedBy = "valuation")
+	private List<Product> productList = new ArrayList<Product>();
+
 	public Valuation(String name) {
 		super();
 		this.name = name;

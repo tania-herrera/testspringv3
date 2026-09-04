@@ -5,7 +5,6 @@ import java.util.Optional;
 import org.core.curso.testspring.data.model.Family;
 import org.core.curso.testspring.data.repository.IFamilyRepository;
 import org.core.curso.testspring.service.IFamilyService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -55,17 +54,24 @@ public class FamilyService implements IFamilyService {
 
 	@Override
 	public void deleteById(Long id) {
-		repo.deleteById(id);
+		Optional<Family> familyOpt = this.findById(id);
+		if ((familyOpt.isPresent() && (familyOpt.get().getProductList().size() == 0))) {
+			repo.deleteById(id);
+		}
 	}
 	
 	@Override
 	public void delete(Family family) {
-		repo.delete(family);	
+		this.deleteById(family.getId());
+		//repo.delete(family);	
 	}
 
 	@Override
 	public void deleteAll() {
-		repo.deleteAll();
+		for(Family family : this.findAll()) {
+			this.delete(family);
+		}
+		//repo.deleteAll();
 	}
 
 	@Override

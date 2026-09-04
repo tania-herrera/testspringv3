@@ -1,8 +1,7 @@
 package org.core.curso.testspring.controller;
 
-import org.core.curso.testspring.data.model.Product;
-import org.core.curso.testspring.service.IProductService;
-import org.springframework.security.access.prepost.PreAuthorize;
+import org.core.curso.testspring.data.model.Family;
+import org.core.curso.testspring.service.IFamilyService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -18,121 +17,108 @@ import java.security.Principal;
 
 @Controller
 @Slf4j
-public class ProductController {
+public class FamilyController {
 	
-	private final IProductService service;
+	private final IFamilyService service;
 	
-	public ProductController(IProductService service) {
+	public FamilyController(IFamilyService service) {
 		super();
 		this.service = service;
 	}
 	
-	// TODO pendiente ver si hay que limitar el borrado de productos
-	@GetMapping("/productDeleteGet/{id}")
-	public String productDeleteGet(
+	@GetMapping("/familyDeleteGet/{id}")
+	public String familyDeleteGet(
 			@PathVariable Long id, 
 			Principal principal, 
 			Model model,
 			HttpServletRequest request) {
-		log.info("TRAZA: entrando en productDeleteGet");
+		log.info("TRAZA: entrando en familyDeleteGet");
 		model.addAttribute("username", principal.getName());
 		model.addAttribute("item", service.findById(id).get());
-		return "product/productDelete";
+		return "family/familyDelete";
 	}
 	
-	@GetMapping("/productDeletePost/{id}")
-	public String productDeleteConfirmed(
+	@GetMapping("/familyDeletePost/{id}")
+	public String familyDeleteConfirmed(
 			@PathVariable Long id, 
 			Principal principal, 
 			Model model,
 			HttpServletRequest request) {
-		log.info("TRAZA: entrando en productDeletePost");
+		log.info("TRAZA: entrando en familyDeletePost");
 		service.deleteById(id);
-		return "redirect:/productList"; 
+		return "redirect:/familyList"; 
 	}
 	
-	@GetMapping("/productAddGet")
-	public String productAddGet(
+	@GetMapping("/familyAddGet")
+	public String familyAddGet(
 			Principal principal, 
 			Model model,
 			HttpServletRequest request) {
-		log.info("TRAZA: entrando en productAddGet");
+		log.info("TRAZA: entrando en familyAddGet");
 		model.addAttribute("username", principal.getName());
-		model.addAttribute("item", new Product());
-		return "product/productAdd";
+		model.addAttribute("item", new Family());
+		return "family/familyAdd";
 	}
 	
-	@PostMapping("/productAddPost")
-	public String productAddPost(
-			@Valid Product product, 
+	@PostMapping("/familyAddPost")
+	public String familyAddPost(
+			@Valid Family family, 
 			BindingResult bindingResult,
 			Principal principal, 
 			Model model,
 			HttpServletRequest request) {
-		log.info("TRAZA: entrando en productAddPost");
+		log.info("TRAZA: entrando en familyAddPost");
 		if (bindingResult.hasErrors()) {
 			log.error("Formulario con errores: " + bindingResult.getAllErrors());
-			return "product/productAdd";
+			return "family/familyAdd";
 		} else {
 			// Debemos guardar el nuevo registro
-			service.save(product);
+			service.save(family);
 			// Queremos ir de nuevo a la lista
-			return "redirect:/productList"; 
+			return "redirect:/familyList"; 
 		}
 	}
 	
-	@GetMapping("/productUpdateGet/{id}")
-	public String productUpdateGet(
+	@GetMapping("/familyUpdateGet/{id}")
+	public String familyUpdateGet(
 			@PathVariable Long id, 
 			Principal principal, 
 			Model model,
 			HttpServletRequest request) {
-		log.info("TRAZA: entrando en productUpdateGet");
+		log.info("TRAZA: entrando en familyUpdateGet");
 		model.addAttribute("username", principal.getName());
 		model.addAttribute("item", service.findById(id).get());
-		return "product/productUpdate";
+		return "family/familyUpdate";
 	}
 	
-	@PostMapping("/productUpdatePost")
-	public String productUpdatePost(
-			@Valid Product product, 
+	@PostMapping("/familyUpdatePost")
+	public String familyUpdatePost(
+			@Valid Family family, 
 			BindingResult bindingResult,
 			Principal principal, 
 			Model model,
 			HttpServletRequest request) {
-		log.info("TRAZA: entrando en productUpdatePost");
+		log.info("TRAZA: entrando en familyUpdatePost");
 		if (bindingResult.hasErrors()) {
 			log.error("Formulario con errores: " + bindingResult.getAllErrors());
-			return "redirect:/productUpdateGet/" + product.getId();
+			return "redirect:/familyUpdateGet/" + family.getId();
 		} else {
 			// Debemos guardar lo modificado
-			service.save(product);
+			service.save(family);
 			// Queremos ir de nuevo a la lista
-			return "redirect:/productList"; 
+			return "redirect:/familyList"; 
 		}
 	}
 
-	@GetMapping({ "/productViewGet/{id}" })
-	public String productViewGet(
-			@PathVariable Long id,
-			Principal principal,
-			Model model,
-			HttpServletRequest request) {
-		System.out.println("TRAZA productViewGet");
-		model.addAttribute("username", principal.getName());
-		model.addAttribute("item", service.findById(id).get());
-		return "product/productView";
-	}
-	
-	@GetMapping({ "/productList" })
+	@GetMapping({ "/familyList" })
 	public String customerList(
 			Principal principal,
 			Model model,
 			HttpServletRequest request) {
-		System.out.println("TRAZA productList");
+		System.out.println("TRAZA familyList");
 		model.addAttribute("username", principal.getName());
 		model.addAttribute("itemList", service.findAll());
-		return "product/productList";
+		return "family/familyList";
 	}
 
 }

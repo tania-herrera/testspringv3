@@ -2,6 +2,7 @@ package org.core.curso.testspring.controller;
 
 import org.core.curso.testspring.data.model.Customer;
 import org.core.curso.testspring.service.ICustomerService;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -26,6 +27,7 @@ public class CustomerController {
 		this.customerService = customerService;
 	}
 	
+	@PreAuthorize("hasAuthority('MANAGER')")
 	@GetMapping("/customerDeleteGet/{id}")
 	public String customerDeleteGet(
 			@PathVariable Long id, 

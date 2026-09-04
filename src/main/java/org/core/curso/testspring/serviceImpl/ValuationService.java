@@ -2,10 +2,10 @@ package org.core.curso.testspring.serviceImpl;
 
 import java.util.List;
 import java.util.Optional;
+
 import org.core.curso.testspring.data.model.Valuation;
 import org.core.curso.testspring.data.repository.IValuationRepository;
 import org.core.curso.testspring.service.IValuationService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -55,17 +55,24 @@ public class ValuationService implements IValuationService {
 
 	@Override
 	public void deleteById(Long id) {
-		repo.deleteById(id);
+		Optional<Valuation> valuationOpt = this.findById(id);
+		if ((valuationOpt.isPresent() && (valuationOpt.get().getProductList().size() == 0))) {
+			repo.deleteById(id);
+		}	
 	}
 	
 	@Override
 	public void delete(Valuation valuation) {
-		repo.delete(valuation);	
+		this.deleteById(valuation.getId());
+		//repo.delete(valuation);	
 	}
 
 	@Override
 	public void deleteAll() {
-		repo.deleteAll();
+		for(Valuation valuation : this.findAll()) {
+			this.delete(valuation);
+		}
+		//repo.deleteAll();	
 	}
 
 	@Override
