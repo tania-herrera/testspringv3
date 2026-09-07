@@ -11,7 +11,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.DecimalMax;
 import jakarta.validation.constraints.DecimalMin;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -32,7 +32,7 @@ public class Family {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@NotNull
+	@NotBlank(message = "Campo 'name' no puede estar vacío")
     @Size(min=1, max=50, message="Campo 'name' debe tener entre 1 y 50 caracteres")
 	@Column(nullable=false, columnDefinition="CHAR(50) CHECK(LENGTH(NAME) >= 1)")
 	private String name;

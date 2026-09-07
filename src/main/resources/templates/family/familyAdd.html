@@ -30,6 +30,19 @@
           <div class="col-12">
             <form th:object="${item}" method="POST" th:action="@{/familyAddPost}">
             
+              <div th:if="${#fields.hasAnyErrors()}"
+              	class="alert alert-warning">
+              	<p th:text="'Errores del formulario:'"></p>
+              	<ul>
+              		<li th:each="err : ${#fields.errors('*')}" th:text="${err}"/>
+              	</ul>
+              </div>
+              
+              <div th:unless="${#fields.hasAnyErrors()}"
+              	class="alert alert-info">
+              	<p th:text="'No hay errores en el formulario:'"></p>
+              </div>
+            
               <input th:field="*{id}" type="hidden">
             
               <div class="row border border-3 border-success rounded">
@@ -37,6 +50,10 @@
                   <label>Name</label>
                   <input type="text" class="form-control mb-3" placeholder="Name"
                    	th:field="*{name}">
+                   	<p  th:if="${#fields.hasErrors('name')}"
+                   		th:errors="*{name}"
+                   		class="alert alert-danger"> 
+                   	</p>
                 </div>
               </div>
               
