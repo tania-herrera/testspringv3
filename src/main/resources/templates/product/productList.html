@@ -25,6 +25,9 @@
             <h3 class="display-5 mb-2 text-white">
               Product list
             </h3>
+            <h2 th:if="${message != null}"  
+            	class="mb-2 text-info" th:text=${message}>
+            </h2>
 
             <!-- p th:text="${itemList}" class="mb-5"></p -->
 

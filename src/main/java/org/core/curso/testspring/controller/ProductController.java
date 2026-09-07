@@ -73,11 +73,12 @@ public class ProductController {
 			Model model,
 			HttpServletRequest request) {
 		log.info("TRAZA: entrando en productAddGet");
+		model.addAttribute("title", "Product add");
 		model.addAttribute("username", principal.getName());
 		model.addAttribute("item", new Product());
 		model.addAttribute("valuationList", this.getValuationService().findAll());
 		model.addAttribute("familyList", this.getFamilyService().findAll());
-		return "product/productAdd";
+		return "product/productAddUpdate";
 	}
 	
 	@PostMapping("/productAddPost")
@@ -90,15 +91,20 @@ public class ProductController {
 		log.info("TRAZA: entrando en productAddPost");
 		if (bindingResult.hasErrors()) {
 			log.error("Formulario con errores: " + bindingResult.getAllErrors());
+			model.addAttribute("title", "Product add");
 			model.addAttribute("username", principal.getName());
 			model.addAttribute("item", product);
 			model.addAttribute("valuationList", this.getValuationService().findAll());
-			model.addAttribute("familyList", this.getFamilyService().findAll());			return "product/productAdd";
+			model.addAttribute("familyList", this.getFamilyService().findAll());			return "product/productAddUpdate";
 		} else {
 			// Debemos guardar el nuevo registro
 			service.save(product);
 			// Queremos ir de nuevo a la lista
-			return "redirect:/productList"; 
+			model.addAttribute("message", "Product saved");
+			model.addAttribute("username", principal.getName());
+			model.addAttribute("itemList", service.findAll());
+			return "product/productList";
+			//return "redirect:/productList"; 
 		}
 	}
 	
@@ -109,9 +115,12 @@ public class ProductController {
 			Model model,
 			HttpServletRequest request) {
 		log.info("TRAZA: entrando en productUpdateGet");
+		model.addAttribute("title", "Product update");
 		model.addAttribute("username", principal.getName());
 		model.addAttribute("item", service.findById(id).get());
-		return "product/productUpdate";
+		model.addAttribute("valuationList", this.getValuationService().findAll());
+		model.addAttribute("familyList", this.getFamilyService().findAll());
+		return "product/productAddUpdate";
 	}
 	
 	@PostMapping("/productUpdatePost")
@@ -129,7 +138,12 @@ public class ProductController {
 			// Debemos guardar lo modificado
 			service.save(product);
 			// Queremos ir de nuevo a la lista
-			return "redirect:/productList"; 
+			model.addAttribute("title", "Product update");
+			model.addAttribute("message", "Product saved");
+			model.addAttribute("username", principal.getName());
+			model.addAttribute("itemList", service.findAll());
+			return "product/productList";			
+			//return "redirect:/productList"; 
 		}
 	}
 
@@ -146,7 +160,7 @@ public class ProductController {
 	}
 	
 	@GetMapping({ "/productList" })
-	public String customerList(
+	public String productList(
 			Principal principal,
 			Model model,
 			HttpServletRequest request) {

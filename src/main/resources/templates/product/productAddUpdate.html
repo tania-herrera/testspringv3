@@ -23,7 +23,11 @@
       <div class="container">
         <div class="row text-center justify-content-center">
           <div class="col-12 col-md-8 col-lg-7">
-            <h3 class="fw-bold display-4 text-white">Product add</h3>
+            
+            <h3 th:if="${title != null}"  
+            	class="fw-bold display-4 text-white" th:text=${title}>
+            </h3>
+            
           </div>
         </div>
         <div class="row pt-4">
@@ -40,13 +44,13 @@
             
               <input th:field="*{id}" type="hidden">
             
-              <div class="row border border-3 border-success rounded">
+              <div class="row">
  				<div class="col input-group mb-2">
 				  <span class="input-group-text bg-secondary text-light" id="inputGroup-sizing-default">Name</span>
                   <input th:field="*{name}" type="text" class="form-control">
                    <p  th:if="${#fields.hasErrors('name')}"
                    		th:errors="*{name}"
-                   		class="alert alert-danger"> 
+                   		class="alert alert-danger form-control"> 
                   </p>
                 </div>
                 

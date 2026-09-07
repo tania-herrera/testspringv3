@@ -6311,3 +6311,485 @@ Database is already closed (to disable automatic closing at VM shutdown, add ";D
 Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
 2026-09-07T19:01:16.247+02:00  INFO 14956 --- [testspring] [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2026-09-07T19:01:16.249+02:00  INFO 14956 --- [testspring] [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-09-07T19:15:37.970+02:00  INFO 4224 --- [testspring] [restartedMain] o.c.c.testspring.TestspringApplication   : Starting TestspringApplication using Java 21.0.11 with PID 4224 (C:\Users\Profesortarde\EclipseProjects\testspring\target\classes started by Profesortarde in C:\Users\Profesortarde\EclipseProjects\testspring)
+2026-09-07T19:15:37.973+02:00  INFO 4224 --- [testspring] [restartedMain] o.c.c.testspring.TestspringApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-09-07T19:15:38.301+02:00  INFO 4224 --- [testspring] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-07T19:15:38.301+02:00  INFO 4224 --- [testspring] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-07T19:15:39.155+02:00  INFO 4224 --- [testspring] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-07T19:15:39.239+02:00  INFO 4224 --- [testspring] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 73 ms. Found 6 JPA repository interfaces.
+2026-09-07T19:15:39.967+02:00  INFO 4224 --- [testspring] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-09-07T19:15:40.003+02:00  INFO 4224 --- [testspring] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-07T19:15:40.003+02:00  INFO 4224 --- [testspring] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-09-07T19:15:40.088+02:00  INFO 4224 --- [testspring] [restartedMain] o.a.c.c.C.[.[localhost].[/testspring]    : Initializing Spring embedded WebApplicationContext
+2026-09-07T19:15:40.091+02:00  INFO 4224 --- [testspring] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1789 ms
+2026-09-07T19:15:40.294+02:00  INFO 4224 --- [testspring] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-07T19:15:40.475+02:00  INFO 4224 --- [testspring] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testspring user=SAS
+2026-09-07T19:15:40.478+02:00  INFO 4224 --- [testspring] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-07T19:15:40.603+02:00  INFO 4224 --- [testspring] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-09-07T19:15:40.664+02:00  INFO 4224 --- [testspring] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.53.Final
+2026-09-07T19:15:40.700+02:00  INFO 4224 --- [testspring] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-09-07T19:15:40.952+02:00  INFO 4224 --- [testspring] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-07T19:15:41.028+02:00  INFO 4224 --- [testspring] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-07T19:15:42.100+02:00  INFO 4224 --- [testspring] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-07T19:15:42.153+02:00  INFO 4224 --- [testspring] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-07T19:15:42.522+02:00  INFO 4224 --- [testspring] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-07T19:15:42.755+02:00  WARN 4224 --- [testspring] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-07T19:15:42.804+02:00  INFO 4224 --- [testspring] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2026-09-07T19:15:43.069+02:00  INFO 4224 --- [testspring] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name daoAuthenticationProvider
+2026-09-07T19:15:43.070+02:00  WARN 4224 --- [testspring] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-09-07T19:15:43.153+02:00  INFO 4224 --- [testspring] [restartedMain] o.c.c.t.config.WebSecurityConfig         : *********** httpSecurity.getSharedObjects()= {class org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder=org.springframework.security.config.annotation.web.configuration.HttpSecurityConfiguration$DefaultPasswordEncoderAuthenticationManagerBuilder@759fafd7, interface org.springframework.context.ApplicationContext=org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7653b058, started on Mon Sep 07 19:15:38 CEST 2026, interface org.springframework.web.accept.ContentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@3b8ca98e}
+2026-09-07T19:15:43.560+02:00  INFO 4224 --- [testspring] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:mem:testspring'
+2026-09-07T19:15:43.852+02:00  INFO 4224 --- [testspring] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-09-07T19:15:43.903+02:00  INFO 4224 --- [testspring] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/testspring'
+2026-09-07T19:15:43.914+02:00  INFO 4224 --- [testspring] [restartedMain] o.c.c.testspring.TestspringApplication   : Started TestspringApplication in 6.382 seconds (process running for 7.206)
+2026-09-07T19:15:43.918+02:00  INFO 4224 --- [testspring] [restartedMain] o.c.c.testspring.config.DataInitializer  : Initializing H2 Database...
+2026-09-07T19:15:44.142+02:00  INFO 4224 --- [testspring] [restartedMain] o.c.c.testspring.config.DataInitializer  : Initialization finished.
+2026-09-07T19:15:50.161+02:00  INFO 4224 --- [testspring] [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/testspring]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-07T19:15:50.161+02:00  INFO 4224 --- [testspring] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-09-07T19:15:50.164+02:00  INFO 4224 --- [testspring] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-09-07T19:15:50.296+02:00  INFO 4224 --- [testspring] [http-nio-8080-exec-1] o.c.c.t.controller.StartController       : TRAZA indexGet
+2026-09-07T19:15:54.697+02:00  INFO 4224 --- [testspring] [http-nio-8080-exec-4] o.c.c.t.serviceImpl.UserService          : Usuario autenticado: luis -> Luis Pérez
+2026-09-07T19:15:55.111+02:00  INFO 4224 --- [testspring] [http-nio-8080-exec-4] o.core.curso.testspring.data.model.User  : 	|MANAGER|
+2026-09-07T19:16:40.151+02:00  INFO 4224 --- [testspring] [http-nio-8080-exec-7] o.c.c.t.controller.ProductController     : TRAZA: entrando en productAddGet
+2026-09-07T19:16:44.840+02:00  INFO 4224 --- [testspring] [http-nio-8080-exec-8] o.c.c.t.controller.ProductController     : TRAZA: entrando en productAddPost
+2026-09-07T19:16:44.840+02:00 ERROR 4224 --- [testspring] [http-nio-8080-exec-8] o.c.c.t.controller.ProductController     : Formulario con errores: [Field error in object 'item' on field 'price': rejected value [null]; codes [NotNull.item.price,NotNull.price,NotNull.java.lang.Double,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [item.price,price]; arguments []; default message [price]]; default message [no debe ser nulo], Field error in object 'item' on field 'discount': rejected value [null]; codes [NotNull.item.discount,NotNull.discount,NotNull.java.lang.Double,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [item.discount,discount]; arguments []; default message [discount]]; default message [no debe ser nulo], Field error in object 'item' on field 'name': rejected value []; codes [Size.item.name,Size.name,Size.java.lang.String,Size]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [item.name,name]; arguments []; default message [name],50,1]; default message [Campo 'name' debe tener entre 1 y 50 caracteres], Field error in object 'item' on field 'URL': rejected value []; codes [Size.item.URL,Size.URL,Size.java.lang.String,Size]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [item.URL,URL]; arguments []; default message [URL],250,1]; default message [Campo 'URL' debe tener entre 1 y 250 caracteres], Field error in object 'item' on field 'stock': rejected value [null]; codes [NotNull.item.stock,NotNull.stock,NotNull.java.lang.Integer,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [item.stock,stock]; arguments []; default message [stock]]; default message [no debe ser nulo]]
+2026-09-07T19:17:36.308+02:00  INFO 4224 --- [testspring] [http-nio-8080-exec-3] o.c.c.t.serviceImpl.UserService          : Usuario autenticado: luis -> Luis Pérez
+2026-09-07T19:17:36.668+02:00  INFO 4224 --- [testspring] [http-nio-8080-exec-3] o.core.curso.testspring.data.model.User  : 	|MANAGER|
+2026-09-07T19:17:46.349+02:00  INFO 4224 --- [testspring] [http-nio-8080-exec-6] o.c.c.t.controller.ProductController     : TRAZA: entrando en productAddGet
+2026-09-07T19:17:48.141+02:00  INFO 4224 --- [testspring] [http-nio-8080-exec-7] o.c.c.t.controller.ProductController     : TRAZA: entrando en productAddPost
+2026-09-07T19:17:48.141+02:00 ERROR 4224 --- [testspring] [http-nio-8080-exec-7] o.c.c.t.controller.ProductController     : Formulario con errores: [Field error in object 'item' on field 'name': rejected value []; codes [Size.item.name,Size.name,Size.java.lang.String,Size]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [item.name,name]; arguments []; default message [name],50,1]; default message [Campo 'name' debe tener entre 1 y 50 caracteres], Field error in object 'item' on field 'price': rejected value [null]; codes [NotNull.item.price,NotNull.price,NotNull.java.lang.Double,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [item.price,price]; arguments []; default message [price]]; default message [no debe ser nulo], Field error in object 'item' on field 'discount': rejected value [null]; codes [NotNull.item.discount,NotNull.discount,NotNull.java.lang.Double,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [item.discount,discount]; arguments []; default message [discount]]; default message [no debe ser nulo], Field error in object 'item' on field 'URL': rejected value []; codes [Size.item.URL,Size.URL,Size.java.lang.String,Size]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [item.URL,URL]; arguments []; default message [URL],250,1]; default message [Campo 'URL' debe tener entre 1 y 250 caracteres], Field error in object 'item' on field 'stock': rejected value [null]; codes [NotNull.item.stock,NotNull.stock,NotNull.java.lang.Integer,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [item.stock,stock]; arguments []; default message [stock]]; default message [no debe ser nulo]]
+2026-09-07T19:22:35.609+02:00  INFO 4224 --- [testspring] [RMI TCP Connection(10)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2026-09-07T19:22:35.614+02:00  INFO 4224 --- [testspring] [RMI TCP Connection(10)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-07T19:22:35.647+02:00  INFO 4224 --- [testspring] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-09-07T19:22:35.990+02:00  INFO 4224 --- [testspring] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-07T19:22:35.991+02:00  INFO 4224 --- [testspring] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-07T19:22:36.013+02:00  INFO 4224 --- [testspring] [restartedMain] o.c.c.testspring.TestspringApplication   : Starting TestspringApplication using Java 21.0.11 with PID 4224 (C:\Users\Profesortarde\EclipseProjects\testspring\target\classes started by Profesortarde in C:\Users\Profesortarde\EclipseProjects\testspring)
+2026-09-07T19:22:36.013+02:00  INFO 4224 --- [testspring] [restartedMain] o.c.c.testspring.TestspringApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-09-07T19:22:36.141+02:00  INFO 4224 --- [testspring] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-09-07T19:22:36.152+02:00  INFO 4224 --- [testspring] [RMI TCP Connection(10)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-09-07T19:22:36.167+02:00  WARN 4224 --- [testspring] [RMI TCP Connection(10)-127.0.0.1] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2026-09-07T19:22:36.168+02:00  INFO 4224 --- [testspring] [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-09-07T19:22:36.178+02:00  INFO 4224 --- [testspring] [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-09-07T19:22:36.580+02:00  INFO 4224 --- [testspring] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-07T19:22:36.613+02:00  INFO 4224 --- [testspring] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 6 JPA repository interfaces.
+2026-09-07T19:22:36.877+02:00  INFO 4224 --- [testspring] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-09-07T19:22:36.903+02:00  INFO 4224 --- [testspring] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 866 ms
+2026-09-07T19:22:37.015+02:00  INFO 4224 --- [testspring] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-09-07T19:22:37.019+02:00  INFO 4224 --- [testspring] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:testspring user=SAS
+2026-09-07T19:22:37.020+02:00  INFO 4224 --- [testspring] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-09-07T19:22:37.088+02:00  INFO 4224 --- [testspring] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-09-07T19:22:37.093+02:00  INFO 4224 --- [testspring] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-09-07T19:22:37.103+02:00  INFO 4224 --- [testspring] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-07T19:22:37.107+02:00  INFO 4224 --- [testspring] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-07T19:22:37.286+02:00  INFO 4224 --- [testspring] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-07T19:22:37.302+02:00  INFO 4224 --- [testspring] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-07T19:22:37.636+02:00  WARN 4224 --- [testspring] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-07T19:22:37.668+02:00  INFO 4224 --- [testspring] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2026-09-07T19:22:37.827+02:00  INFO 4224 --- [testspring] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name daoAuthenticationProvider
+2026-09-07T19:22:37.828+02:00  WARN 4224 --- [testspring] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-09-07T19:22:37.863+02:00  INFO 4224 --- [testspring] [restartedMain] o.c.c.t.config.WebSecurityConfig         : *********** httpSecurity.getSharedObjects()= {class org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder=org.springframework.security.config.annotation.web.configuration.HttpSecurityConfiguration$DefaultPasswordEncoderAuthenticationManagerBuilder@737b978d, interface org.springframework.context.ApplicationContext=org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@439e8144, started on Mon Sep 07 19:22:36 CEST 2026, interface org.springframework.web.accept.ContentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@6c4ecad7}
+2026-09-07T19:22:38.079+02:00  INFO 4224 --- [testspring] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:mem:testspring'
+2026-09-07T19:22:38.157+02:00  INFO 4224 --- [testspring] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-09-07T19:22:38.177+02:00  INFO 4224 --- [testspring] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/testspring'
+2026-09-07T19:22:38.183+02:00  INFO 4224 --- [testspring] [restartedMain] o.c.c.testspring.TestspringApplication   : Started TestspringApplication in 2.239 seconds (process running for 421.474)
+2026-09-07T19:22:38.256+02:00  INFO 4224 --- [testspring] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-09-07T19:22:47.307+02:00  INFO 4224 --- [testspring] [RMI TCP Connection(10)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2026-09-07T19:22:47.307+02:00  INFO 4224 --- [testspring] [RMI TCP Connection(10)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-07T19:22:47.316+02:00  INFO 4224 --- [testspring] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-09-07T19:22:47.320+02:00  INFO 4224 --- [testspring] [RMI TCP Connection(10)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-09-07T19:22:47.321+02:00  WARN 4224 --- [testspring] [RMI TCP Connection(10)-127.0.0.1] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2026-09-07T19:22:47.322+02:00  INFO 4224 --- [testspring] [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2026-09-07T19:22:47.323+02:00  INFO 4224 --- [testspring] [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2026-09-07T19:22:49.861+02:00  INFO 5876 --- [testspring] [restartedMain] o.c.c.testspring.TestspringApplication   : Starting TestspringApplication using Java 21.0.11 with PID 5876 (C:\Users\Profesortarde\EclipseProjects\testspring\target\classes started by Profesortarde in C:\Users\Profesortarde\EclipseProjects\testspring)
+2026-09-07T19:22:49.866+02:00  INFO 5876 --- [testspring] [restartedMain] o.c.c.testspring.TestspringApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-09-07T19:22:50.178+02:00  INFO 5876 --- [testspring] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-07T19:22:50.178+02:00  INFO 5876 --- [testspring] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-07T19:22:51.142+02:00  INFO 5876 --- [testspring] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-07T19:22:51.239+02:00  INFO 5876 --- [testspring] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 86 ms. Found 6 JPA repository interfaces.
+2026-09-07T19:22:52.308+02:00  INFO 5876 --- [testspring] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-09-07T19:22:52.326+02:00  INFO 5876 --- [testspring] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-07T19:22:52.326+02:00  INFO 5876 --- [testspring] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-09-07T19:22:52.383+02:00  INFO 5876 --- [testspring] [restartedMain] o.a.c.c.C.[.[localhost].[/testspring]    : Initializing Spring embedded WebApplicationContext
+2026-09-07T19:22:52.383+02:00  INFO 5876 --- [testspring] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2205 ms
+2026-09-07T19:22:52.575+02:00  INFO 5876 --- [testspring] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-07T19:22:52.771+02:00  INFO 5876 --- [testspring] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testspring user=SAS
+2026-09-07T19:22:52.774+02:00  INFO 5876 --- [testspring] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-07T19:22:52.918+02:00  INFO 5876 --- [testspring] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-09-07T19:22:52.981+02:00  INFO 5876 --- [testspring] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.53.Final
+2026-09-07T19:22:53.021+02:00  INFO 5876 --- [testspring] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-09-07T19:22:53.303+02:00  INFO 5876 --- [testspring] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-07T19:22:53.379+02:00  INFO 5876 --- [testspring] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-07T19:22:54.503+02:00  INFO 5876 --- [testspring] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-07T19:22:54.563+02:00  INFO 5876 --- [testspring] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-07T19:22:54.970+02:00  INFO 5876 --- [testspring] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-07T19:22:55.224+02:00  WARN 5876 --- [testspring] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-07T19:22:55.271+02:00  INFO 5876 --- [testspring] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2026-09-07T19:22:55.542+02:00  INFO 5876 --- [testspring] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name daoAuthenticationProvider
+2026-09-07T19:22:55.544+02:00  WARN 5876 --- [testspring] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-09-07T19:22:55.633+02:00  INFO 5876 --- [testspring] [restartedMain] o.c.c.t.config.WebSecurityConfig         : *********** httpSecurity.getSharedObjects()= {interface org.springframework.web.accept.ContentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@26d806bc, interface org.springframework.context.ApplicationContext=org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6319b8b4, started on Mon Sep 07 19:22:50 CEST 2026, class org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder=org.springframework.security.config.annotation.web.configuration.HttpSecurityConfiguration$DefaultPasswordEncoderAuthenticationManagerBuilder@25be36f4}
+2026-09-07T19:22:56.044+02:00  INFO 5876 --- [testspring] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:mem:testspring'
+2026-09-07T19:22:56.411+02:00  INFO 5876 --- [testspring] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-09-07T19:22:56.469+02:00  INFO 5876 --- [testspring] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/testspring'
+2026-09-07T19:22:56.480+02:00  INFO 5876 --- [testspring] [restartedMain] o.c.c.testspring.TestspringApplication   : Started TestspringApplication in 7.093 seconds (process running for 8.037)
+2026-09-07T19:22:56.484+02:00  INFO 5876 --- [testspring] [restartedMain] o.c.c.testspring.config.DataInitializer  : Initializing H2 Database...
+2026-09-07T19:22:56.730+02:00  INFO 5876 --- [testspring] [restartedMain] o.c.c.testspring.config.DataInitializer  : Initialization finished.
+2026-09-07T19:39:50.545+02:00  INFO 5876 --- [testspring] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-09-07T19:39:50.549+02:00  INFO 5876 --- [testspring] [Thread-5] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-07T19:39:50.561+02:00  INFO 5876 --- [testspring] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-09-07T19:39:50.569+02:00  INFO 5876 --- [testspring] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-09-07T19:39:50.578+02:00  WARN 5876 --- [testspring] [Thread-5] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2026-09-07T19:39:50.579+02:00  INFO 5876 --- [testspring] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-09-07T19:39:50.582+02:00  INFO 5876 --- [testspring] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-09-07T19:39:50.682+02:00  INFO 5876 --- [testspring] [restartedMain] o.c.c.testspring.TestspringApplication   : Starting TestspringApplication using Java 21.0.11 with PID 5876 (C:\Users\Profesortarde\EclipseProjects\testspring\target\classes started by Profesortarde in C:\Users\Profesortarde\EclipseProjects\testspring)
+2026-09-07T19:39:50.682+02:00  INFO 5876 --- [testspring] [restartedMain] o.c.c.testspring.TestspringApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-09-07T19:39:51.082+02:00  INFO 5876 --- [testspring] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-07T19:39:51.116+02:00  INFO 5876 --- [testspring] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 6 JPA repository interfaces.
+2026-09-07T19:39:51.311+02:00  INFO 5876 --- [testspring] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-09-07T19:39:51.313+02:00  INFO 5876 --- [testspring] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-07T19:39:51.313+02:00  INFO 5876 --- [testspring] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-09-07T19:39:51.340+02:00  INFO 5876 --- [testspring] [restartedMain] o.a.c.c.C.[.[localhost].[/testspring]    : Initializing Spring embedded WebApplicationContext
+2026-09-07T19:39:51.340+02:00  INFO 5876 --- [testspring] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 646 ms
+2026-09-07T19:39:51.467+02:00  INFO 5876 --- [testspring] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-09-07T19:39:51.471+02:00  INFO 5876 --- [testspring] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:testspring user=SAS
+2026-09-07T19:39:51.472+02:00  INFO 5876 --- [testspring] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-09-07T19:39:51.519+02:00  INFO 5876 --- [testspring] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-09-07T19:39:51.523+02:00  INFO 5876 --- [testspring] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-09-07T19:39:51.536+02:00  INFO 5876 --- [testspring] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-07T19:39:51.539+02:00  INFO 5876 --- [testspring] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-07T19:39:51.705+02:00  INFO 5876 --- [testspring] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-07T19:39:51.725+02:00  INFO 5876 --- [testspring] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-07T19:39:52.027+02:00  WARN 5876 --- [testspring] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-07T19:39:52.055+02:00  INFO 5876 --- [testspring] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2026-09-07T19:39:52.203+02:00  INFO 5876 --- [testspring] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name daoAuthenticationProvider
+2026-09-07T19:39:52.203+02:00  WARN 5876 --- [testspring] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-09-07T19:39:52.230+02:00  INFO 5876 --- [testspring] [restartedMain] o.c.c.t.config.WebSecurityConfig         : *********** httpSecurity.getSharedObjects()= {interface org.springframework.web.accept.ContentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@46e41450, interface org.springframework.context.ApplicationContext=org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@420da8c3, started on Mon Sep 07 19:39:50 CEST 2026, class org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder=org.springframework.security.config.annotation.web.configuration.HttpSecurityConfiguration$DefaultPasswordEncoderAuthenticationManagerBuilder@33a23282}
+2026-09-07T19:39:52.451+02:00  INFO 5876 --- [testspring] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:mem:testspring'
+2026-09-07T19:39:52.523+02:00  INFO 5876 --- [testspring] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-09-07T19:39:52.545+02:00  INFO 5876 --- [testspring] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/testspring'
+2026-09-07T19:39:52.552+02:00  INFO 5876 --- [testspring] [restartedMain] o.c.c.testspring.TestspringApplication   : Started TestspringApplication in 1.91 seconds (process running for 1024.108)
+2026-09-07T19:39:52.553+02:00  INFO 5876 --- [testspring] [restartedMain] o.c.c.testspring.config.DataInitializer  : Initializing H2 Database...
+2026-09-07T19:39:52.645+02:00  INFO 5876 --- [testspring] [restartedMain] o.c.c.testspring.config.DataInitializer  : Initialization finished.
+2026-09-07T19:39:52.647+02:00  INFO 5876 --- [testspring] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-09-07T19:48:47.309+02:00  INFO 5876 --- [testspring] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-09-07T19:48:47.312+02:00  INFO 5876 --- [testspring] [Thread-7] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-07T19:48:47.321+02:00  INFO 5876 --- [testspring] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-09-07T19:48:47.326+02:00  INFO 5876 --- [testspring] [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-09-07T19:48:47.330+02:00  WARN 5876 --- [testspring] [Thread-7] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2026-09-07T19:48:47.330+02:00  INFO 5876 --- [testspring] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2026-09-07T19:48:47.332+02:00  INFO 5876 --- [testspring] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2026-09-07T19:48:47.446+02:00  INFO 5876 --- [testspring] [restartedMain] o.c.c.testspring.TestspringApplication   : Starting TestspringApplication using Java 21.0.11 with PID 5876 (C:\Users\Profesortarde\EclipseProjects\testspring\target\classes started by Profesortarde in C:\Users\Profesortarde\EclipseProjects\testspring)
+2026-09-07T19:48:47.447+02:00  INFO 5876 --- [testspring] [restartedMain] o.c.c.testspring.TestspringApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-09-07T19:48:47.746+02:00  INFO 5876 --- [testspring] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-07T19:48:47.773+02:00  INFO 5876 --- [testspring] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 6 JPA repository interfaces.
+2026-09-07T19:48:47.949+02:00  INFO 5876 --- [testspring] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-09-07T19:48:47.952+02:00  INFO 5876 --- [testspring] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-07T19:48:47.953+02:00  INFO 5876 --- [testspring] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-09-07T19:48:47.974+02:00  INFO 5876 --- [testspring] [restartedMain] o.a.c.c.C.[.[localhost].[/testspring]    : Initializing Spring embedded WebApplicationContext
+2026-09-07T19:48:47.975+02:00  INFO 5876 --- [testspring] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 519 ms
+2026-09-07T19:48:48.063+02:00  INFO 5876 --- [testspring] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2026-09-07T19:48:48.065+02:00  INFO 5876 --- [testspring] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection conn20: url=jdbc:h2:mem:testspring user=SAS
+2026-09-07T19:48:48.067+02:00  INFO 5876 --- [testspring] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2026-09-07T19:48:48.096+02:00  INFO 5876 --- [testspring] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-09-07T19:48:48.100+02:00  INFO 5876 --- [testspring] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-09-07T19:48:48.109+02:00  INFO 5876 --- [testspring] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-07T19:48:48.111+02:00  INFO 5876 --- [testspring] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-3)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-07T19:48:48.260+02:00  INFO 5876 --- [testspring] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-07T19:48:48.288+02:00  INFO 5876 --- [testspring] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-07T19:48:48.585+02:00  WARN 5876 --- [testspring] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-07T19:48:48.612+02:00  INFO 5876 --- [testspring] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2026-09-07T19:48:48.772+02:00  INFO 5876 --- [testspring] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name daoAuthenticationProvider
+2026-09-07T19:48:48.773+02:00  WARN 5876 --- [testspring] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-09-07T19:48:48.799+02:00  INFO 5876 --- [testspring] [restartedMain] o.c.c.t.config.WebSecurityConfig         : *********** httpSecurity.getSharedObjects()= {interface org.springframework.web.accept.ContentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@205fdf66, interface org.springframework.context.ApplicationContext=org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2e1a3385, started on Mon Sep 07 19:48:47 CEST 2026, class org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder=org.springframework.security.config.annotation.web.configuration.HttpSecurityConfiguration$DefaultPasswordEncoderAuthenticationManagerBuilder@4051091b}
+2026-09-07T19:48:49.051+02:00  INFO 5876 --- [testspring] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:mem:testspring'
+2026-09-07T19:48:49.121+02:00  INFO 5876 --- [testspring] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-09-07T19:48:49.141+02:00  INFO 5876 --- [testspring] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/testspring'
+2026-09-07T19:48:49.145+02:00  INFO 5876 --- [testspring] [restartedMain] o.c.c.testspring.TestspringApplication   : Started TestspringApplication in 1.746 seconds (process running for 1560.701)
+2026-09-07T19:48:49.146+02:00  INFO 5876 --- [testspring] [restartedMain] o.c.c.testspring.config.DataInitializer  : Initializing H2 Database...
+2026-09-07T19:48:49.217+02:00  INFO 5876 --- [testspring] [restartedMain] o.c.c.testspring.config.DataInitializer  : Initialization finished.
+2026-09-07T19:48:49.219+02:00  INFO 5876 --- [testspring] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-09-07T19:49:13.961+02:00  INFO 5876 --- [testspring] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-09-07T19:49:13.964+02:00  INFO 5876 --- [testspring] [Thread-12] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-07T19:49:13.977+02:00  INFO 5876 --- [testspring] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-09-07T19:49:13.980+02:00  INFO 5876 --- [testspring] [Thread-12] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-09-07T19:49:13.982+02:00  WARN 5876 --- [testspring] [Thread-12] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2026-09-07T19:49:13.982+02:00  INFO 5876 --- [testspring] [Thread-12] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2026-09-07T19:49:13.984+02:00  INFO 5876 --- [testspring] [Thread-12] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2026-09-07T19:49:14.116+02:00  INFO 5876 --- [testspring] [restartedMain] o.c.c.testspring.TestspringApplication   : Starting TestspringApplication using Java 21.0.11 with PID 5876 (C:\Users\Profesortarde\EclipseProjects\testspring\target\classes started by Profesortarde in C:\Users\Profesortarde\EclipseProjects\testspring)
+2026-09-07T19:49:14.116+02:00  INFO 5876 --- [testspring] [restartedMain] o.c.c.testspring.TestspringApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-09-07T19:49:14.370+02:00  INFO 5876 --- [testspring] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-07T19:49:14.401+02:00  INFO 5876 --- [testspring] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 6 JPA repository interfaces.
+2026-09-07T19:49:14.554+02:00  INFO 5876 --- [testspring] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-09-07T19:49:14.555+02:00  INFO 5876 --- [testspring] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-07T19:49:14.555+02:00  INFO 5876 --- [testspring] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-09-07T19:49:14.574+02:00  INFO 5876 --- [testspring] [restartedMain] o.a.c.c.C.[.[localhost].[/testspring]    : Initializing Spring embedded WebApplicationContext
+2026-09-07T19:49:14.574+02:00  INFO 5876 --- [testspring] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 454 ms
+2026-09-07T19:49:14.658+02:00  INFO 5876 --- [testspring] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2026-09-07T19:49:14.659+02:00  INFO 5876 --- [testspring] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection conn30: url=jdbc:h2:mem:testspring user=SAS
+2026-09-07T19:49:14.660+02:00  INFO 5876 --- [testspring] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2026-09-07T19:49:14.686+02:00  INFO 5876 --- [testspring] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-09-07T19:49:14.689+02:00  INFO 5876 --- [testspring] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-09-07T19:49:14.698+02:00  INFO 5876 --- [testspring] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-07T19:49:14.700+02:00  INFO 5876 --- [testspring] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-4)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-07T19:49:14.831+02:00  INFO 5876 --- [testspring] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-07T19:49:14.854+02:00  INFO 5876 --- [testspring] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-07T19:49:16.694+02:00  INFO 1632 --- [testspring] [restartedMain] o.c.c.testspring.TestspringApplication   : Starting TestspringApplication using Java 21.0.11 with PID 1632 (C:\Users\Profesortarde\EclipseProjects\testspring\target\classes started by Profesortarde in C:\Users\Profesortarde\EclipseProjects\testspring)
+2026-09-07T19:49:16.696+02:00  INFO 1632 --- [testspring] [restartedMain] o.c.c.testspring.TestspringApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-09-07T19:49:16.983+02:00  INFO 1632 --- [testspring] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-07T19:49:16.983+02:00  INFO 1632 --- [testspring] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-07T19:49:17.811+02:00  INFO 1632 --- [testspring] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-07T19:49:17.890+02:00  INFO 1632 --- [testspring] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 69 ms. Found 6 JPA repository interfaces.
+2026-09-07T19:49:18.592+02:00  INFO 1632 --- [testspring] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-09-07T19:49:18.611+02:00  INFO 1632 --- [testspring] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-07T19:49:18.613+02:00  INFO 1632 --- [testspring] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-09-07T19:49:18.667+02:00  INFO 1632 --- [testspring] [restartedMain] o.a.c.c.C.[.[localhost].[/testspring]    : Initializing Spring embedded WebApplicationContext
+2026-09-07T19:49:18.667+02:00  INFO 1632 --- [testspring] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1683 ms
+2026-09-07T19:49:18.832+02:00  INFO 1632 --- [testspring] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-07T19:49:19.012+02:00  INFO 1632 --- [testspring] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testspring user=SAS
+2026-09-07T19:49:19.015+02:00  INFO 1632 --- [testspring] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-07T19:49:19.139+02:00  INFO 1632 --- [testspring] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-09-07T19:49:19.199+02:00  INFO 1632 --- [testspring] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.53.Final
+2026-09-07T19:49:19.233+02:00  INFO 1632 --- [testspring] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-09-07T19:49:19.475+02:00  INFO 1632 --- [testspring] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-07T19:49:19.553+02:00  INFO 1632 --- [testspring] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-07T19:49:20.577+02:00  INFO 1632 --- [testspring] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-07T19:49:20.629+02:00  INFO 1632 --- [testspring] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-07T19:49:20.991+02:00  INFO 1632 --- [testspring] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-07T19:49:21.218+02:00  WARN 1632 --- [testspring] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-07T19:49:21.262+02:00  INFO 1632 --- [testspring] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2026-09-07T19:49:21.515+02:00  INFO 1632 --- [testspring] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name daoAuthenticationProvider
+2026-09-07T19:49:21.516+02:00  WARN 1632 --- [testspring] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-09-07T19:49:21.600+02:00  INFO 1632 --- [testspring] [restartedMain] o.c.c.t.config.WebSecurityConfig         : *********** httpSecurity.getSharedObjects()= {interface org.springframework.web.accept.ContentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@7c52c548, class org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder=org.springframework.security.config.annotation.web.configuration.HttpSecurityConfiguration$DefaultPasswordEncoderAuthenticationManagerBuilder@74221aa9, interface org.springframework.context.ApplicationContext=org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@afd7303, started on Mon Sep 07 19:49:16 CEST 2026}
+2026-09-07T19:49:21.999+02:00  INFO 1632 --- [testspring] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:mem:testspring'
+2026-09-07T19:49:22.292+02:00  INFO 1632 --- [testspring] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-09-07T19:49:22.348+02:00  INFO 1632 --- [testspring] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/testspring'
+2026-09-07T19:49:22.359+02:00  INFO 1632 --- [testspring] [restartedMain] o.c.c.testspring.TestspringApplication   : Started TestspringApplication in 6.116 seconds (process running for 6.928)
+2026-09-07T19:49:22.364+02:00  INFO 1632 --- [testspring] [restartedMain] o.c.c.testspring.config.DataInitializer  : Initializing H2 Database...
+2026-09-07T19:49:22.590+02:00  INFO 1632 --- [testspring] [restartedMain] o.c.c.testspring.config.DataInitializer  : Initialization finished.
+2026-09-07T19:50:12.800+02:00  INFO 1632 --- [testspring] [http-nio-8080-exec-2] o.a.c.c.C.[.[localhost].[/testspring]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-07T19:50:12.800+02:00  INFO 1632 --- [testspring] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-09-07T19:50:12.802+02:00  INFO 1632 --- [testspring] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-09-07T19:50:12.896+02:00  INFO 1632 --- [testspring] [http-nio-8080-exec-2] o.c.c.t.controller.StartController       : TRAZA indexGet
+2026-09-07T19:50:17.081+02:00  INFO 1632 --- [testspring] [http-nio-8080-exec-5] o.c.c.t.serviceImpl.UserService          : Usuario autenticado: luis -> Luis Pérez
+2026-09-07T19:50:17.405+02:00  INFO 1632 --- [testspring] [http-nio-8080-exec-5] o.core.curso.testspring.data.model.User  : 	|MANAGER|
+2026-09-07T19:50:24.349+02:00  INFO 1632 --- [testspring] [http-nio-8080-exec-8] o.c.c.t.controller.ProductController     : TRAZA: entrando en productUpdateGet
+2026-09-07T19:57:00.443+02:00  INFO 1632 --- [testspring] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-09-07T19:57:00.447+02:00  INFO 1632 --- [testspring] [Thread-5] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-07T19:57:00.458+02:00  INFO 1632 --- [testspring] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-09-07T19:57:00.466+02:00  INFO 1632 --- [testspring] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-09-07T19:57:00.475+02:00  WARN 1632 --- [testspring] [Thread-5] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2026-09-07T19:57:00.475+02:00  INFO 1632 --- [testspring] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-09-07T19:57:00.477+02:00  INFO 1632 --- [testspring] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-09-07T19:57:00.590+02:00  INFO 1632 --- [testspring] [restartedMain] o.c.c.testspring.TestspringApplication   : Starting TestspringApplication using Java 21.0.11 with PID 1632 (C:\Users\Profesortarde\EclipseProjects\testspring\target\classes started by Profesortarde in C:\Users\Profesortarde\EclipseProjects\testspring)
+2026-09-07T19:57:00.591+02:00  INFO 1632 --- [testspring] [restartedMain] o.c.c.testspring.TestspringApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-09-07T19:57:00.889+02:00  INFO 1632 --- [testspring] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-07T19:57:00.919+02:00  INFO 1632 --- [testspring] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 6 JPA repository interfaces.
+2026-09-07T19:57:01.120+02:00  INFO 1632 --- [testspring] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-09-07T19:57:01.122+02:00  INFO 1632 --- [testspring] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-07T19:57:01.123+02:00  INFO 1632 --- [testspring] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-09-07T19:57:01.147+02:00  INFO 1632 --- [testspring] [restartedMain] o.a.c.c.C.[.[localhost].[/testspring]    : Initializing Spring embedded WebApplicationContext
+2026-09-07T19:57:01.148+02:00  INFO 1632 --- [testspring] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 545 ms
+2026-09-07T19:57:01.238+02:00  INFO 1632 --- [testspring] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-09-07T19:57:01.241+02:00  INFO 1632 --- [testspring] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:testspring user=SAS
+2026-09-07T19:57:01.241+02:00  INFO 1632 --- [testspring] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-09-07T19:57:01.276+02:00  INFO 1632 --- [testspring] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-09-07T19:57:01.280+02:00  INFO 1632 --- [testspring] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-09-07T19:57:01.293+02:00  INFO 1632 --- [testspring] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-07T19:57:01.297+02:00  INFO 1632 --- [testspring] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-07T19:57:01.462+02:00  INFO 1632 --- [testspring] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-07T19:57:01.489+02:00  INFO 1632 --- [testspring] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-07T19:57:01.768+02:00  WARN 1632 --- [testspring] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-07T19:57:01.803+02:00  INFO 1632 --- [testspring] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2026-09-07T19:57:01.949+02:00  INFO 1632 --- [testspring] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name daoAuthenticationProvider
+2026-09-07T19:57:01.949+02:00  WARN 1632 --- [testspring] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-09-07T19:57:01.978+02:00  INFO 1632 --- [testspring] [restartedMain] o.c.c.t.config.WebSecurityConfig         : *********** httpSecurity.getSharedObjects()= {interface org.springframework.web.accept.ContentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@775ed156, class org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder=org.springframework.security.config.annotation.web.configuration.HttpSecurityConfiguration$DefaultPasswordEncoderAuthenticationManagerBuilder@51dd76a3, interface org.springframework.context.ApplicationContext=org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2dad4414, started on Mon Sep 07 19:57:00 CEST 2026}
+2026-09-07T19:57:02.232+02:00  INFO 1632 --- [testspring] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:mem:testspring'
+2026-09-07T19:57:02.365+02:00  INFO 1632 --- [testspring] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-09-07T19:57:02.396+02:00  INFO 1632 --- [testspring] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/testspring'
+2026-09-07T19:57:02.403+02:00  INFO 1632 --- [testspring] [restartedMain] o.c.c.testspring.TestspringApplication   : Started TestspringApplication in 1.858 seconds (process running for 466.971)
+2026-09-07T19:57:02.405+02:00  INFO 1632 --- [testspring] [restartedMain] o.c.c.testspring.config.DataInitializer  : Initializing H2 Database...
+2026-09-07T19:57:02.514+02:00  INFO 1632 --- [testspring] [restartedMain] o.c.c.testspring.config.DataInitializer  : Initialization finished.
+2026-09-07T19:57:02.517+02:00  INFO 1632 --- [testspring] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-09-07T19:57:06.751+02:00  INFO 1632 --- [testspring] [RMI TCP Connection(11)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2026-09-07T19:57:06.752+02:00  INFO 1632 --- [testspring] [RMI TCP Connection(11)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-07T19:57:06.761+02:00  INFO 1632 --- [testspring] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-09-07T19:57:06.765+02:00  INFO 1632 --- [testspring] [RMI TCP Connection(11)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-09-07T19:57:06.766+02:00  WARN 1632 --- [testspring] [RMI TCP Connection(11)-127.0.0.1] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2026-09-07T19:57:06.767+02:00  INFO 1632 --- [testspring] [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2026-09-07T19:57:06.768+02:00  INFO 1632 --- [testspring] [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2026-09-07T19:59:43.635+02:00  INFO 2608 --- [testspring] [restartedMain] o.c.c.testspring.TestspringApplication   : Starting TestspringApplication using Java 21.0.11 with PID 2608 (C:\Users\Profesortarde\EclipseProjects\testspring\target\classes started by Profesortarde in C:\Users\Profesortarde\EclipseProjects\testspring)
+2026-09-07T19:59:43.639+02:00  INFO 2608 --- [testspring] [restartedMain] o.c.c.testspring.TestspringApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-09-07T19:59:43.930+02:00  INFO 2608 --- [testspring] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-07T19:59:43.930+02:00  INFO 2608 --- [testspring] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-07T19:59:44.742+02:00  INFO 2608 --- [testspring] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-07T19:59:44.825+02:00  INFO 2608 --- [testspring] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72 ms. Found 6 JPA repository interfaces.
+2026-09-07T19:59:45.536+02:00  INFO 2608 --- [testspring] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-09-07T19:59:45.555+02:00  INFO 2608 --- [testspring] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-07T19:59:45.555+02:00  INFO 2608 --- [testspring] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-09-07T19:59:45.623+02:00  INFO 2608 --- [testspring] [restartedMain] o.a.c.c.C.[.[localhost].[/testspring]    : Initializing Spring embedded WebApplicationContext
+2026-09-07T19:59:45.624+02:00  INFO 2608 --- [testspring] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1693 ms
+2026-09-07T19:59:45.807+02:00  INFO 2608 --- [testspring] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-07T19:59:45.994+02:00  INFO 2608 --- [testspring] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testspring user=SAS
+2026-09-07T19:59:45.996+02:00  INFO 2608 --- [testspring] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-07T19:59:46.121+02:00  INFO 2608 --- [testspring] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-09-07T19:59:46.183+02:00  INFO 2608 --- [testspring] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.53.Final
+2026-09-07T19:59:46.217+02:00  INFO 2608 --- [testspring] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-09-07T19:59:46.462+02:00  INFO 2608 --- [testspring] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-07T19:59:46.540+02:00  INFO 2608 --- [testspring] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-07T19:59:47.547+02:00  INFO 2608 --- [testspring] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-07T19:59:47.599+02:00  INFO 2608 --- [testspring] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-07T19:59:47.967+02:00  INFO 2608 --- [testspring] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-07T19:59:48.195+02:00  WARN 2608 --- [testspring] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-07T19:59:48.240+02:00  INFO 2608 --- [testspring] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2026-09-07T19:59:48.492+02:00  INFO 2608 --- [testspring] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name daoAuthenticationProvider
+2026-09-07T19:59:48.494+02:00  WARN 2608 --- [testspring] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-09-07T19:59:48.576+02:00  INFO 2608 --- [testspring] [restartedMain] o.c.c.t.config.WebSecurityConfig         : *********** httpSecurity.getSharedObjects()= {interface org.springframework.web.accept.ContentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@60c35c96, class org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder=org.springframework.security.config.annotation.web.configuration.HttpSecurityConfiguration$DefaultPasswordEncoderAuthenticationManagerBuilder@55cf863d, interface org.springframework.context.ApplicationContext=org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@afd7303, started on Mon Sep 07 19:59:43 CEST 2026}
+2026-09-07T19:59:48.974+02:00  INFO 2608 --- [testspring] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:mem:testspring'
+2026-09-07T19:59:49.260+02:00  INFO 2608 --- [testspring] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-09-07T19:59:49.313+02:00  INFO 2608 --- [testspring] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/testspring'
+2026-09-07T19:59:49.324+02:00  INFO 2608 --- [testspring] [restartedMain] o.c.c.testspring.TestspringApplication   : Started TestspringApplication in 6.151 seconds (process running for 6.924)
+2026-09-07T19:59:49.327+02:00  INFO 2608 --- [testspring] [restartedMain] o.c.c.testspring.config.DataInitializer  : Initializing H2 Database...
+2026-09-07T19:59:49.547+02:00  INFO 2608 --- [testspring] [restartedMain] o.c.c.testspring.config.DataInitializer  : Initialization finished.
+2026-09-07T20:00:07.649+02:00  INFO 2608 --- [testspring] [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/testspring]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-07T20:00:07.649+02:00  INFO 2608 --- [testspring] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-09-07T20:00:07.650+02:00  INFO 2608 --- [testspring] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-09-07T20:00:07.748+02:00  INFO 2608 --- [testspring] [http-nio-8080-exec-1] o.c.c.t.controller.StartController       : TRAZA indexGet
+2026-09-07T20:00:11.632+02:00  INFO 2608 --- [testspring] [http-nio-8080-exec-4] o.c.c.t.serviceImpl.UserService          : Usuario autenticado: luis -> Luis Pérez
+2026-09-07T20:00:11.959+02:00  INFO 2608 --- [testspring] [http-nio-8080-exec-4] o.core.curso.testspring.data.model.User  : 	|MANAGER|
+2026-09-07T20:00:22.650+02:00  INFO 2608 --- [testspring] [http-nio-8080-exec-7] o.c.c.t.controller.ProductController     : TRAZA: entrando en productUpdateGet
+2026-09-07T20:00:37.248+02:00  INFO 2608 --- [testspring] [http-nio-8080-exec-8] o.c.c.t.controller.ProductController     : TRAZA: entrando en productAddGet
+2026-09-07T20:08:48.070+02:00  INFO 2608 --- [testspring] [RMI TCP Connection(11)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2026-09-07T20:08:48.073+02:00  INFO 2608 --- [testspring] [RMI TCP Connection(11)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-07T20:08:48.085+02:00  INFO 2608 --- [testspring] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-09-07T20:08:48.091+02:00  INFO 2608 --- [testspring] [RMI TCP Connection(11)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-09-07T20:08:48.098+02:00  WARN 2608 --- [testspring] [RMI TCP Connection(11)-127.0.0.1] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2026-09-07T20:08:48.099+02:00  INFO 2608 --- [testspring] [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-09-07T20:08:48.101+02:00  INFO 2608 --- [testspring] [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-09-07T20:13:11.878+02:00  INFO 11000 --- [testspring] [restartedMain] o.c.c.testspring.TestspringApplication   : Starting TestspringApplication using Java 21.0.11 with PID 11000 (C:\Users\Profesortarde\EclipseProjects\testspring\target\classes started by Profesortarde in C:\Users\Profesortarde\EclipseProjects\testspring)
+2026-09-07T20:13:11.882+02:00  INFO 11000 --- [testspring] [restartedMain] o.c.c.testspring.TestspringApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-09-07T20:13:12.168+02:00  INFO 11000 --- [testspring] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-09-07T20:13:12.168+02:00  INFO 11000 --- [testspring] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-09-07T20:13:12.978+02:00  INFO 11000 --- [testspring] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-07T20:13:13.060+02:00  INFO 11000 --- [testspring] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72 ms. Found 6 JPA repository interfaces.
+2026-09-07T20:13:13.758+02:00  INFO 11000 --- [testspring] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-09-07T20:13:13.779+02:00  INFO 11000 --- [testspring] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-07T20:13:13.780+02:00  INFO 11000 --- [testspring] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-09-07T20:13:13.855+02:00  INFO 11000 --- [testspring] [restartedMain] o.a.c.c.C.[.[localhost].[/testspring]    : Initializing Spring embedded WebApplicationContext
+2026-09-07T20:13:13.856+02:00  INFO 11000 --- [testspring] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1686 ms
+2026-09-07T20:13:14.081+02:00  INFO 11000 --- [testspring] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-07T20:13:14.270+02:00  INFO 11000 --- [testspring] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testspring user=SAS
+2026-09-07T20:13:14.272+02:00  INFO 11000 --- [testspring] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-07T20:13:14.396+02:00  INFO 11000 --- [testspring] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-09-07T20:13:14.454+02:00  INFO 11000 --- [testspring] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.53.Final
+2026-09-07T20:13:14.490+02:00  INFO 11000 --- [testspring] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-09-07T20:13:14.739+02:00  INFO 11000 --- [testspring] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-09-07T20:13:14.812+02:00  INFO 11000 --- [testspring] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-09-07T20:13:15.823+02:00  INFO 11000 --- [testspring] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-09-07T20:13:15.873+02:00  INFO 11000 --- [testspring] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-07T20:13:16.238+02:00  INFO 11000 --- [testspring] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-09-07T20:13:16.472+02:00  WARN 11000 --- [testspring] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-07T20:13:16.517+02:00  INFO 11000 --- [testspring] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2026-09-07T20:13:16.780+02:00  INFO 11000 --- [testspring] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name daoAuthenticationProvider
+2026-09-07T20:13:16.781+02:00  WARN 11000 --- [testspring] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-09-07T20:13:16.866+02:00  INFO 11000 --- [testspring] [restartedMain] o.c.c.t.config.WebSecurityConfig         : *********** httpSecurity.getSharedObjects()= {interface org.springframework.web.accept.ContentNegotiationStrategy=org.springframework.web.accept.ContentNegotiationManager@11a970d4, class org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder=org.springframework.security.config.annotation.web.configuration.HttpSecurityConfiguration$DefaultPasswordEncoderAuthenticationManagerBuilder@2d60820, interface org.springframework.context.ApplicationContext=org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@afd7303, started on Mon Sep 07 20:13:12 CEST 2026}
+2026-09-07T20:13:17.273+02:00  INFO 11000 --- [testspring] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2'. Database available at 'jdbc:h2:mem:testspring'
+2026-09-07T20:13:17.566+02:00  INFO 11000 --- [testspring] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-09-07T20:13:17.617+02:00  INFO 11000 --- [testspring] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/testspring'
+2026-09-07T20:13:17.628+02:00  INFO 11000 --- [testspring] [restartedMain] o.c.c.testspring.TestspringApplication   : Started TestspringApplication in 6.209 seconds (process running for 6.992)
+2026-09-07T20:13:17.631+02:00  INFO 11000 --- [testspring] [restartedMain] o.c.c.testspring.config.DataInitializer  : Initializing H2 Database...
+2026-09-07T20:13:17.859+02:00  INFO 11000 --- [testspring] [restartedMain] o.c.c.testspring.config.DataInitializer  : Initialization finished.
+2026-09-07T20:13:40.181+02:00  INFO 11000 --- [testspring] [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/testspring]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-07T20:13:40.181+02:00  INFO 11000 --- [testspring] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-09-07T20:13:40.183+02:00  INFO 11000 --- [testspring] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-09-07T20:13:40.300+02:00  INFO 11000 --- [testspring] [http-nio-8080-exec-1] o.c.c.t.controller.StartController       : TRAZA indexGet
+2026-09-07T20:13:43.990+02:00  INFO 11000 --- [testspring] [http-nio-8080-exec-4] o.c.c.t.serviceImpl.UserService          : Usuario autenticado: luis -> Luis Pérez
+2026-09-07T20:13:44.326+02:00  INFO 11000 --- [testspring] [http-nio-8080-exec-4] o.core.curso.testspring.data.model.User  : 	|MANAGER|
+2026-09-07T20:13:51.255+02:00  INFO 11000 --- [testspring] [http-nio-8080-exec-7] o.c.c.t.controller.ProductController     : TRAZA: entrando en productAddGet
+2026-09-07T20:14:09.706+02:00  INFO 11000 --- [testspring] [http-nio-8080-exec-9] o.c.c.t.controller.ProductController     : TRAZA: entrando en productAddGet
+2026-09-07T20:14:14.142+02:00  INFO 11000 --- [testspring] [http-nio-8080-exec-1] o.c.c.t.controller.ProductController     : TRAZA: entrando en productUpdateGet
+2026-09-07T20:18:04.147+02:00  INFO 11000 --- [testspring] [http-nio-8080-exec-7] o.c.c.t.controller.ProductController     : TRAZA: entrando en productDeleteGet
+2026-09-07T20:21:13.933+02:00  INFO 11000 --- [testspring] [RMI TCP Connection(11)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2026-09-07T20:21:13.936+02:00  INFO 11000 --- [testspring] [RMI TCP Connection(11)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-09-07T20:21:13.948+02:00  INFO 11000 --- [testspring] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-09-07T20:21:13.955+02:00  INFO 11000 --- [testspring] [RMI TCP Connection(11)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-09-07T20:21:13.961+02:00  WARN 11000 --- [testspring] [RMI TCP Connection(11)-127.0.0.1] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: La base de datos ya esta cerrada (para des-habilitar el cerrado automatico durante el shutdown de la VM, agregue ";DB_CLOSE_ON_EXIT=FALSE" a la URL de conexión)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-232]
+2026-09-07T20:21:13.962+02:00  INFO 11000 --- [testspring] [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-09-07T20:21:13.964+02:00  INFO 11000 --- [testspring] [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
