@@ -51,9 +51,10 @@ public class ProductController {
 			Model model,
 			HttpServletRequest request) {
 		log.info("TRAZA: entrando en productDeleteGet");
+		model.addAttribute("title", "Product Delete");
 		model.addAttribute("username", principal.getName());
 		model.addAttribute("item", service.findById(id).get());
-		return "product/productDelete";
+		return "product/productViewDelete";
 	}
 	
 	@GetMapping("/productDeletePost/{id}")
@@ -154,9 +155,10 @@ public class ProductController {
 			Model model,
 			HttpServletRequest request) {
 		System.out.println("TRAZA productViewGet");
+		model.addAttribute("title", "Product View");
 		model.addAttribute("username", principal.getName());
 		model.addAttribute("item", service.findById(id).get());
-		return "product/productView";
+		return "product/productViewDelete";
 	}
 	
 	@GetMapping({ "/productList" })

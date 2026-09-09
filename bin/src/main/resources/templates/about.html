@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+	<div th:replace="~{standardLayouts/head :: head1}">
+		AQUI DEBERÍA SALIR EL HEAD
+	</div>
+
+<body>
+
+    <nav th:replace="~{standardLayouts/navbar :: navbar1}">
+		AQUI DEBERÍA SALIR EL NAVBAR
+    </nav>
+
+    <div class="container py-5">
+        <h1 class="mb-5">About Us</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="contact-form">
+                    <h2 class="mb-4" th:text="${fullname} + ', envíanos un mensaje'">Send Us a Message</h2>
+                    <a type="button" class="btn btn-primary w-100" 
+                    	th:href="@{/home}">Home</a>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+                    <p><strong>Address:</strong> Avenida de Manoteras, 32, Hortaleza, 28050, Madrid</p>
+                    <p><strong>Email:</strong> <a href="mailto:info@hamason.com">info@hamason.com</a></p>
+                    <p><strong>Phone:</strong> +34 688 888 888</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="contact-info">
+                    <h2>Follow Us</h2>
+                    <div class="d-flex align-items-center gap-3">
+                        <a href="https://facebook.com" target="_blank"><i class="bi bi-facebook social-icon"></i></a>
+                        <a href="https://twitter.com" target="_blank"><i class="bi bi-twitter social-icon"></i></a>
+                        <a href="https://instagram.com" target="_blank"><i class="bi bi-instagram social-icon"></i></a>
+                        <a href="https://linkedin.com" target="_blank"><i class="bi bi-linkedin social-icon"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<footer th:replace="~{standardLayouts/footer :: footer1}">
+		AQUI DEBERIA SALIR EL FOOTER
+	</footer>
+
+	<div th:replace="~{standardLayouts/script :: script1}">
+		AQUI DEBERIA SALIR EL SCRIPT
+	</div>
+
+</body>
+
+</html>

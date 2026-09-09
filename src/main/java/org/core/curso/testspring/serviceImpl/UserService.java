@@ -62,8 +62,8 @@ public class UserService implements IUserService {
 				false,
 				LocalDate.now().plusDays(5),
 				true,
-				Set.of(roleService.findById("ADMIN").get(),
-						roleService.findById("CUSTOMER").get())
+				Set.of(roleService.findByRolename("ADMIN").get(),
+						roleService.findByRolename("CUSTOMER").get())
 				));
 		
 		repo.save(new User("jag", 
@@ -74,8 +74,8 @@ public class UserService implements IUserService {
 				false,
 				LocalDate.now().plusDays(5),
 				true,
-				Set.of(roleService.findById("ADMIN").get(),
-						roleService.findById("CUSTOMER").get())
+				Set.of(roleService.findByRolename("ADMIN").get(),
+						roleService.findByRolename("CUSTOMER").get())
 				));
 		
 		repo.save(User.builder()
@@ -87,8 +87,8 @@ public class UserService implements IUserService {
 				.lockedAccount(false)
 				.enabled(false)
 				.password("$2a$12$dR4tDCQBUFIfmr3.NslvsuGrPpYofax3KnBgAbvRpON6GJ.sSAqce")
-				.roleSet(Set.of(roleService.findById("MANAGER").get(),
-								roleService.findById("CUSTOMER").get()))
+				.roleSet(Set.of(roleService.findByRolename("MANAGER").get(),
+								roleService.findByRolename("CUSTOMER").get()))
 				.build()
 				);
 		repo.save(User.builder()
@@ -100,7 +100,7 @@ public class UserService implements IUserService {
 				.lockedAccount(false)
 				.enabled(true)
 				.password("$2a$12$OOhpBXUplTFhEx/Yp6rDxOWJ7Q75CzyWWROl.P7h2kdawZnDx9UXe")
-				.roleSet(Set.of(roleService.findById("MANAGER").get()))
+				.roleSet(Set.of(roleService.findByRolename("MANAGER").get()))
 				.build()
 				);
 		

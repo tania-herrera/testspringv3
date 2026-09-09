@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	>
+
+  <div th:replace="~{standardLayouts/head :: head1}">
+  	AQUI DEBERIA SALIR EL head
+  </div>
+
+  <body>
+  
+  <div class="pb-5 pt-5 bg-dark text-light min-vw-100 min-vh-100">
+  
+    <div th:replace="~{standardLayouts/navbar :: navbar1}">
+  		AQUI DEBERIA SALIR EL navbar
+  	</div>
+
+    <section id="prices" class="pt-2 pb-2 bg-dark text-white">
+      <div class="container">
+        <div class="row w-100">
+          <div class="col-lg-12 col-md-12 col-12">
+            <h3 class="display-5 mb-2 text-white">
+              Customer list
+            </h3>
+
+            <!-- p th:text="${customerList}" class="mb-5"></p -->
+
+            <div>
+              <a th:text="'Add'" role="button" class="btn btn-success mb-1"
+                th:href="@{/customerAddGet}">
+              </a>
+            </div>
+              
+            <div class="table-responsive bg-light">
+              <table class="table   table-hover text-start text-dark">
+                <thead class="">
+                  <tr class="bgd-gradient-blue  ">
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Total Purchases</th>
+                    <th class="text-primary">View</th>
+                    <th class="text-warning">Update</th>
+                    <th class="text-danger">Delete</th>                        
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr th:each="customer : ${customerList}">
+                    <td th:text="${customer.getId()}"></td>
+                    <td th:text="${customer.getName()}"></td>
+                    <td th:text="${customer.getAge()}"></td>
+                    <td th:text="${customer.getTotalPurchases()}"></td>
+
+					<!--                     
+                    <td>
+                    	<p th:unless="${customer.getContactList().size() != 0}"
+                    		th:text="'This POI has not contacts'">
+                    	</p>
+                    	<ul th:if="${customer.getContactList().size() != 0}">
+                    		<li th:each="contact : ${customer.getContactList()}"
+                    			th:value="${contact.getId()}"
+                    			th:text="${contact.getName()} + ' > ' 
+                    				   + ${contact.getPhone()} + ' >> '
+                    				   + ${contact.getObservations()}">                    		
+                    		</li>
+                    	</ul>
+                    </td>
+                    --> 
+                    
+                    <td>
+                    	<a th:text="'View'" role="button" class="btn btn-primary"
+                    		th:href="@{/customerViewGet/} + ${customer.getId()}">
+                    	</a>
+                    </td>
+                    <td>
+                    	<a th:text="'Update'" role="button" class="btn btn-warning"
+                    		th:href="@{/customerUpdateGet/} + ${customer.getId()}"> </a>
+                    </td>
+                    <td>
+                    	<a th:text="'Delete'" role="button" class="btn btn-danger"
+                    		th:href="@{/customerDeleteGet/} + ${customer.getId()}">
+                    	</a>
+                    </td>   
+
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+         
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div th:replace="~{standardLayouts/footer :: footer1}">
+  		AQUI DEBERIA SALIR EL footer
+  	</div>  	
+  	
+  	<div th:replace="~{standardLayouts/script :: script1}">
+  		AQUI DEBERIA SALIR EL script
+  	</div>
+
+  </div>
+  </body>
+
+</html>

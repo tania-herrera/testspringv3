@@ -12,6 +12,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
@@ -36,7 +38,11 @@ public class Role implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	@Id
+	@Id 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	
 	@Column(name = "ROLENAME", nullable = false)
 	@Size(min = 3, max = 50, message = "Rolename must have 2 to 50 characters")
 	private String rolename;

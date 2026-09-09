@@ -8,6 +8,9 @@ import org.core.curso.testspring.service.IRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import lombok.extern.java.Log;
+
+@Log
 @Service
 public class RoleService implements IRoleService {
 	
@@ -48,13 +51,51 @@ public class RoleService implements IRoleService {
 	}
 
 	@Override
-	public void save(Role role) {
-		repo.save(role);
+	public String save(Role role) {
+
+	    Role role2 = null;
+	    
+	    // Convertir el rolename a mayúsculas
+	    role.setRolename(role.getRolename().toUpperCase());
+	    log.info("Intentando guardar el role: " + role);
+
+	    if (role.getId() == null) {
+
+	        // NUEVO ROLE
+	        
+	    	if (!this.existByRolename(role.getRolename())) {
+	            role2 = repo.save(role);
+	            return "Role nuevo guardado";
+	        } 
+	        else {
+	            return "Rolename ya existe";
+	        }
+
+	    } else {
+
+	        // MODIFICAR ROLE
+	        Optional<Role> roleSearched = this.findByRolename(role.getRolename());
+
+	        if (roleSearched.isEmpty()) {
+	            role2 = repo.save(role);
+	            return "Role actualizado";
+	        }
+	        else {
+	        	return "No se puede actualizar, ya existe";
+	        }
+	    }
+	    }
+
+	   
+
+
+	private boolean existByRolename(String rolename) {
+	    return repo.findByRolename(rolename).isPresent();
 	}
 
 	@Override
-	public void deleteById(String rolename) {
-		repo.deleteById(rolename);
+	public void deleteById(Long id) {
+		repo.deleteById(id);
 	}
 	
 	@Override
@@ -68,13 +109,19 @@ public class RoleService implements IRoleService {
 	}
 
 	@Override
-	public Boolean existsById(String rolename) {
-		return repo.existsById(rolename);
+	public Boolean existsById(Long id) {
+		return repo.existsById(id);
 	}
 
 	@Override
-	public Optional<Role> findById(String rolename) {
-		return repo.findById(rolename);
+	public Optional<Role> findById(Long id) {
+		return repo.findById(id);
+	}
+
+	
+	@Override
+	public Optional<Role> findByRolename(String rolename) {
+		return repo.findByRolename(rolename);
 	}
 
 }

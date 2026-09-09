@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	>
+
+  <div th:replace="~{standardLayouts/head :: head1}">
+  	AQUI DEBERIA SALIR EL head
+  </div>
+
+  <body>
+  
+  <div class="pb-5 pt-5 bg-dark text-light min-vw-100 min-vh-100">
+  
+  
+    <div th:replace="~{standardLayouts/navbar :: navbar1}">
+  		AQUI DEBERIA SALIR EL navbar
+  	</div>
+
+    <section class="pb-5 pt-5 bg-dark text-light">
+      <div class="container">
+        <div class="row text-center justify-content-center">
+          <div class="col-12 col-md-8 col-lg-7">
+            <h3 class="fw-bold display-4 text-white">Customer update</h3>
+          </div>
+        </div>
+        <div class="row pt-4">
+          <div class="col-12">
+            <form th:object="${customer}" method="POST" th:action="@{/customerUpdatePost}">
+            
+              <input th:field="*{id}" type="hidden">
+            
+              <div class="row">
+                <div class="col-12 col-md">
+                  <label>Name</label>
+                  <input type="text" class="form-control" placeholder="Name"
+                   	th:field="*{name}">
+                </div>
+                <div class="col-12 col-md mt-4 mt-md-0">
+                  <label>Age</label>
+                  <input type="number" class="form-control" placeholder="Age"
+                  	th:field="*{age}">
+                </div>
+                <div class="col-12 col-md mt-4 mt-md-0">
+                  <label>Total Purchases</label>
+                  <input type="number" min="0" max="999999.99" step="0.01" 
+                    class="form-control" placeholder="Total Purchases"
+                    th:field="*{totalPurchases}">
+                </div>
+              </div>
+              <div class="row mt-4">
+                <div class="col">
+                  <label>Card Number</label>
+                  <input type="text" class="form-control" placeholder="Card Number"
+                    th:field="*{cardNumber}">
+                </div>
+              </div>
+              
+              <div class="row mt-4">
+                <div class="col text-center">
+                  <button type="submit"
+                    class="btn btn-danger btn-lg">Save</button>
+                </div>
+
+                <div class="col text-center">
+                  <button type="reset"
+                    class="btn btn-primary btn-lg">Undo</button>
+                </div>
+                
+                <div class="col text-center">
+	               <a type="button" th:href="@{/customerList}"
+    	              class="btn btn-success w-100 btn-round mb-3 btn-rised">
+        	          Back
+            	   </a>
+            	</div>
+              </div>
+            
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div th:replace="~{standardLayouts/footer :: footer1}">
+  		AQUI DEBERIA SALIR EL footer
+  	</div>  	
+  	
+  	<div th:replace="~{standardLayouts/script :: script1}">
+  		AQUI DEBERIA SALIR EL script
+  	</div>
+
+  </div>
+  </body>
+
+</html>

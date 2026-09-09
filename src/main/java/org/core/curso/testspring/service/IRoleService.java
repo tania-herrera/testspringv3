@@ -10,19 +10,21 @@ import org.springframework.stereotype.Service;
 public interface IRoleService {
 
 	public void deleteAll();
-	public void deleteById(String rolename);
+	public void deleteById(Long id);
 	public void delete(Role role);
 
-	public void save(Role role);
+	public String save(Role role);
 	public void saveDataTest();
 	
-	public Boolean existsById(String rolename);
+	public Boolean existsById(Long id);
 	public Long count();
 	
-	public Optional<Role> findById(String rolename);
+	public Optional<Role> findById(Long id);
+	public Optional<Role> findByRolename(String rolename);
 	public List<Role> findAll();
 	
 	public void showAll();	
 	public void showRole(Optional<Role> roleOpt);
+	
 	
 }

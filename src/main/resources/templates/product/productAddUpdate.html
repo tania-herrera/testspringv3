@@ -114,11 +114,11 @@
                 </div>
               
 				<div class="col input-group mb-2">
-				  <span class="input-group-text bg-secondary text-light" id="inputGroup-sizing-default">Family</span>
-                  <select required th:field="*{family}">
-                  	<option th:each="family : ${familyList}"
-                  			th:value="${family.id}"
-                  			th:text="${family.name}">
+				  <span class="input-group-text bg-secondary text-light" id="inputGroup-sizing-default">Role</span>
+                  <select required th:field="*{role}">
+                  	<option th:each="role : ${roleList}"
+                  			th:value="${role.id}"
+                  			th:text="${role.name}">
                   	</option>
                   </select>
                 </div>

@@ -97,7 +97,7 @@ public class User implements Serializable, UserDetails {
 	@JoinTable(
 		name = "USERS_HAS_ROLES",
 		joinColumns = @JoinColumn(name = "FK_USERS_ID", referencedColumnName = "ID"),
-		inverseJoinColumns = @JoinColumn(name = "FK_ROLES_ROLENAME", referencedColumnName = "ROLENAME")
+		inverseJoinColumns = @JoinColumn(name = "FK_ROLES_ID", referencedColumnName = "ID")
 		)
 	private Set<Role> roleSet = new HashSet<Role>();
 
