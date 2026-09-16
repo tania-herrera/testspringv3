@@ -70,6 +70,9 @@ public class StartController {
 		System.out.println("TRAZA welcomeGet");
 		System.out.println("requestURL: " + request.getRequestURL());
 		System.out.println("requestURI: " + request.getRequestURI());
+		
+		model.addAttribute("numberOfProducts", 7);
+		
 		model.addAttribute ("requestURI", request.getRequestURI().substring(request.getContextPath().length()));
 		model.addAttribute("username", principal.getName());
 		model.addAttribute("roles", userService.findByUsername(principal.getName()).get().getRoleSet());

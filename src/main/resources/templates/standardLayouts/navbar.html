@@ -38,9 +38,17 @@
               <a class="nav-link" href="#" id="navbarDropdown" role="button"
                 data-bs-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
+                
+                <img class="rounded-circle u-box-shadow-sm me-2" width="30"
+                  height="30" th:src="@{/img/Foto_ast.jpg}"
+                  alt="Htmlstream">   <!-- Este codigo permitwe poner una imagen propia     -->
+                
+                <!--   
                 <img class="rounded-circle u-box-shadow-sm me-2" width="25"
                   height="25" src=" https://dummyimage.com/100/007bff/efefef"
                   alt="Htmlstream" th:text="${username} + ' '"><i class="fa fa-angle-down   "></i>
+                  
+                  --> 
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#" th:text="#{web.html.navbar.account.profile}">Profile</a>
@@ -59,6 +67,7 @@
               </a>
                
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" th:href="@{/order}">Order</a>   <!--  th:text="#{web.html.navbar.data.order}"-->
                 <a class="dropdown-item" th:href="@{/customerList}" th:text="#{web.html.navbar.data.customers}">Customers</a>
                 <a class="dropdown-item" th:href="@{/productList}" th:text="#{web.html.navbar.data.products}">Products</a>
                 <a class="dropdown-item" th:href="@{/providerList}" th:text="#{web.html.navbar.data.providers}">Providers</a>
@@ -75,6 +84,19 @@
                 
               </div>
             </li>
+            
+            <li sec:authorize="hasAuthority('CUSTOMER')" 
+            		th:if="${numberOfProducts != null}" class="nav-item me-3 mt-1">
+	   			<a th:href="@{/shoppingCart/cartSummary}" class="btn text-light bg-dark  
+	   					position-relative"> 
+		  			<i class="bi bi-cart3 fs-4">
+	   					<span th:text="${numberOfProducts}" class="position-absolute top-15 end-55
+                     translate-middle-y text-warning fw-bold fs-6">5
+	   						<span class="visually-hidden">Shopping cart</span>
+	   					</span>
+	   				</i>
+  				</a>
+  			</li>        
             
              <li class="nav-item dropdown">
 

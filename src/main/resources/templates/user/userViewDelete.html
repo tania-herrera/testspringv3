@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	>
+
+  <div th:replace="~{standardLayouts/head :: head1}">
+  	AQUI DEBERIA SALIR EL head
+  </div>
+
+  <body>
+  
+  <div class="pb-5 pt-5 bg-dark text-light min-vw-100 min-vh-100">
+  
+    <div th:replace="~{standardLayouts/navbar :: navbar1}">
+  		AQUI DEBERIA SALIR EL navbar
+  	</div>
+  	
+  	<section class="pb-5 pt-5 bg-dark text-light">
+      <div class="container">
+        <div class="row text-center ">
+          <div class="col-12 col-md-8 col-lg-7">
+
+            <h3 th:if="${title != null}"  
+            	class="fw-bold display-4 text-white" th:text=${title}>
+            </h3>
+            
+          </div>
+        </div>
+        
+        <div class="row pt-4">
+          <div class="col-12">
+          
+             <div th:object="${item}">
+            
+              <div class="row">
+              
+				<div class="col input-group mb-2">
+				  <span class="input-group-text bg-secondary text-light" id="inputGroup-sizing-default">Username</span>
+				  <input readonly th:value="${item.getUsername()}" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+				</div>
+             
+				<div class="col input-group mb-2">
+				  <span class="input-group-text bg-secondary text-light" id="inputGroup-sizing-default">Price</span>
+                  <input readonly th:value="${item.getPrice()}" type="text" class="form-control">
+                </div>
+
+              </div>
+
+              <div class="row mt-4">
+              
+				<div class="col input-group mb-2">
+				  <span class="input-group-text bg-secondary text-light" id="inputGroup-sizing-default">Stock</span>
+                  <input readonly th:value="${item.getStock()}" type="text" class="form-control">
+                </div>
+              
+				<div class="col input-group mb-2">
+				  <span class="input-group-text bg-secondary text-light" id="inputGroup-sizing-default">Discount</span>
+                  <input readonly th:value="${item.getDiscount()}" type="text" class="form-control">
+                </div>
+              
+              </div>
+              
+              <div class="row mt-4">
+              
+				<div class="col input-group mb-2">
+				  <span class="input-group-text bg-secondary text-light" id="inputGroup-sizing-default">URL</span>
+                  <input readonly th:value="${item.getURL()}" type="text" class="form-control">
+                </div>
+
+              </div>
+              
+              
+              <div class="row mt-4">
+              
+				<div class="col input-group mb-2">
+				  <span class="input-group-text bg-secondary text-light" id="inputGroup-sizing-default">Valuation</span>
+                  <input readonly th:value="${item.getValuation().getName()}" type="text" class="form-control">
+                </div>
+              
+				<div class="col input-group mb-2">
+				  <span class="input-group-text bg-secondary text-light" id="inputGroup-sizing-default">Family</span>
+                  <input readonly th:value="${item.getFamily().getName()}" type="text" class="form-control">
+                </div>
+              
+              </div>
+
+              <div class="row mt-4">
+			    <div class="col text-center">
+ 	               <a type="button" th:href="@{/userList}"
+    	              class="btn btn-success w-100 btn-round mb-3 btn-rised">
+        	          Back 
+            	    </a>
+            	</div>
+              
+                <div th:if="${title == 'User delete'}" class="col text-center">
+ 	               <a type="button" th:href="@{/userDeletePost/} + ${item.getId()}"
+    	              class="btn btn-danger w-100 btn-round mb-3 btn-rised">
+        	          Delete 
+            	    </a>
+            	</div>
+              </div>
+                          
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  	
+    <div th:replace="~{standardLayouts/footer :: footer1}">
+  		AQUI DEBERIA SALIR EL footer
+  	</div>  	
+  	
+  	<div th:replace="~{standardLayouts/script :: script1}">
+  		AQUI DEBERIA SALIR EL script
+  	</div>
+
+  </div>
+  
+  </body>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	>
+
+  <div th:replace="~{standardLayouts/head :: head1}">
+  	AQUI DEBERIA SALIR EL head
+  </div>
+
+  <body>
+  
+  <div class="pb-5 pt-5 bg-dark text-light min-vw-100 min-vh-100">
+  
+    <div th:replace="~{standardLayouts/navbar :: navbar1}">
+  		AQUI DEBERIA SALIR EL navbar
+  	</div>
+
+    <section id="prices" class="pt-2 pb-2 bg-dark text-white">
+      <div class="container">
+        <div class="row w-100">
+          <div class="col-lg-12 col-md-12 col-12">
+            <h3 class="display-5 mb-2 text-white">
+              User list
+            </h3>
+
+            <!-- p th:text="${userList}" class="mb-5"></p -->
+
+            <div>
+              <a th:text="'Add'" role="button" class="btn btn-success mb-1"
+                th:href="@{/userAddGet}">
+              </a>
+            </div>
+              
+            <div class="table-responsive bg-light">
+              <table class="table   table-hover text-start text-dark">
+                <thead class="">
+                  <tr class="bgd-gradient-blue  ">
+                    <th th:text="#{web.userList.html.table.id}">Id</th>
+                    <th th:text="#{web.userList.html.table.username}">Username</th>
+                    <th th:text="#{web.userList.html.table.fullname}">Fullname</th>
+                     <th th:text="#{web.userList.html.table.email}">Email</th>
+                    <th th:text="#{web.userList.html.table.roleSet}">Roles</th>
+                    <th th:text="#{web.userList.html.table.expiryDateAccount}">Expiry Date Account</th>
+                    <th class="text-primary" th:text="#{web.html.button.view}">View</th>
+                    <th class="text-warning" th:text="#{web.html.button.update}">Update</th>
+                    <th class="text-danger" th:text="#{web.html.button.delete}">Delete</th>                         
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr th:each="user : ${itemList}">
+                    <td th:text="${user.getId()}"></td>
+                    <td th:text="${user.getUsername()}"></td>
+                    <td th:text="${user.getFullname()}"></td>
+                    <td th:text="${user.getEmail()}"></td>
+                    
+                    
+                    
+                    
+					
+					<td> 
+						<ul>
+						<li th:each ="role: ${user.getRoleSet()}"
+							th:text="${role.getRolename()}">
+						</li> 
+						
+						</ul>                    
+                    </td>
+                    <td th:text="${user.getExpiryDateAccount()}"></td>
+					<!--                     
+                    <td>
+                    	<p th:unless="${user.getContactList().size() != 0}"
+                    		th:text="'This POI has not contacts'">
+                    	</p>
+                    	<ul th:if="${user.getContactList().size() != 0}">
+                    		<li th:each="contact : ${user.getContactList()}"
+                    			th:value="${contact.getId()}"
+                    			th:text="${contact.getName()} + ' > ' 
+                    				   + ${contact.getPhone()} + ' >> '
+                    				   + ${contact.getObservations()}">                    		
+                    		</li>
+                    	</ul>
+                    </td>
+                    --> 
+                    
+                    <td>
+                    	<a th:href="@{/userViewGet/} + ${user.getId()}"
+                    		role="button" class="btn btn-primary"> 
+                    		<i class="bi bi-camera fa-lg"></i>
+                    	</a>
+                    </td>
+                    <td>
+                    	<a role="button" class="btn btn-warning"
+                    		th:href="@{/userUpdateGet/} + ${user.getId()}"> 
+                    		<i class="bi bi-pen fa-lg"></i>	
+                    	</a>
+                    </td>
+                    <td>
+                    	<a role="button" class="btn btn-danger"
+                    		th:href="@{/userDeleteGet/} + ${user.getId()}">
+                    		<i class="bi bi-trash fa-lg"></i>
+                    	</a>
+                    </td>   
+
+
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+         
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div th:replace="~{standardLayouts/footer :: footer1}">
+  		AQUI DEBERIA SALIR EL footer
+  	</div>  	
+  	
+  	<div th:replace="~{standardLayouts/script :: script1}">
+  		AQUI DEBERIA SALIR EL script
+  	</div>
+
+  </div>
+  </body>
+
+</html>
