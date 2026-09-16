@@ -37,7 +37,7 @@ import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 import lombok.extern.java.Log;
 
-@NoArgsConstructor
+
 @SuperBuilder
 @Getter
 @Setter
@@ -162,7 +162,7 @@ public class User implements Serializable, UserDetails {
 		this.password = password;
 		this.email = email;
 		this.fullname = fullname;
-		this.expiryDateAccount = expiryDateAccount;
+		this.expiryDateAccount = LocalDate.now().plusDays(1000);
 		this.lockedAccount = lockedAccount;
 		this.expiryDateCredentials = expiryDateCredentials;
 		this.enabled = enabled;
@@ -184,7 +184,7 @@ public class User implements Serializable, UserDetails {
 		this.password = password;
 		this.email = email;
 		this.fullname = fullname;
-		this.expiryDateAccount = expiryDateAccount;
+		this.expiryDateAccount = LocalDate.now().plusDays(1000);
 		this.lockedAccount = lockedAccount;
 		this.expiryDateCredentials = expiryDateCredentials;
 		this.enabled = enabled;
@@ -211,6 +211,14 @@ public class User implements Serializable, UserDetails {
 		//return Objects.equals(id, other.id);
 	}
 	
-	
+	public User() {
+		super();
+		this.setExpiryDateAccount(LocalDate.now().plusMonths(100));
+		this.setExpiryDateCredentials(LocalDate.now().plusDays(100));
+		this.setEnabled(true);
+		this.setLockedAccount(false);
+		this.setPassword("passwordToBeChanged");
+		// pendiente crear que cuando se loogue por primera vez le aparezca la ventana de cambio de contraseña en lugar del welcome
+	}
 	
 }

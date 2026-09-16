@@ -17,6 +17,7 @@ public interface IRoleService {
 	public void saveDataTest();
 	
 	public Boolean existsById(Long id);
+	public Boolean existsByRolename(String rolename);
 	public Long count();
 	
 	public Optional<Role> findById(Long id);

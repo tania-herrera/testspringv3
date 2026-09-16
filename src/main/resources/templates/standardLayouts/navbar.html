@@ -20,43 +20,20 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul class="navbar-nav ms-auto me-sm-2 mt-2 mt-lg-0">
             <li class="nav-item active me-3">
-              <a class="nav-link" th:href="@{/home}">Home <span
+              <a class="nav-link" th:href="@{/home}" th:text="#{web.html.navbar.home}">Home <span
                   class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item me-3">
-              <a class="nav-link" th:href="@{/aboutGet}">About</a>
+              <a class="nav-link" th:href="@{/aboutGet}" th:text="#{web.html.navbar.about}">About</a>
             </li>
             <li class="nav-item me-3">
-              <a class="nav-link" th:href="@{/servicesGet}">Services</a>
+              <a class="nav-link" th:href="@{/servicesGet}" th:text="#{web.html.navbar.services}">Services</a>
             </li>
              <li class="nav-item me-3">
-              <a class="nav-link" th:href="@{/contactsGet}">Contacts</a>
+              <a class="nav-link" th:href="@{/contactsGet}" th:text="#{web.html.navbar.contacts}">Contacts</a>
             </li>
             
-            
-            <li class="nav-item dropdown">
-              <a class="nav-link" href="#" id="navbarDropdown" role="button"
-                data-bs-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">Data
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" th:href="@{/customerList}">Customers</a>
-                <a class="dropdown-item" th:href="@{/productList}">Products</a>
-                <a class="dropdown-item" href="#">Providers</a>
-                <div class="dropdown-divider"></div>
-                
-                <a class="dropdown-item" th:href="@{/valuationList}">Valuations</a>
-                
-                <a sec:authorize = "hasAuthority('MANAGER')" 
-                	class="dropdown-item" th:href="@{/familyList}">Families
-                </a>
-                
-                <a class="dropdown-item" href="#">Users</a>
-                <a class="dropdown-item" th:href="@{/roleList}">Roles</a>
-              </div>
-            </li>
-            
-            
+             
             <li class="nav-item dropdown">
               <a class="nav-link" href="#" id="navbarDropdown" role="button"
                 data-bs-toggle="dropdown" aria-haspopup="true"
@@ -66,13 +43,91 @@
                   alt="Htmlstream" th:text="${username} + ' '"><i class="fa fa-angle-down   "></i>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Profile</a>
-                <a class="dropdown-item" href="#">Account Settings</a>
-                <a class="dropdown-item" href="#">Newsletter</a>
+                <a class="dropdown-item" href="#" th:text="#{web.html.navbar.account.profile}">Profile</a>
+                <a class="dropdown-item" href="#" th:text="#{web.html.navbar.account.settings}">Account Settings</a>
+                <a class="dropdown-item" href="#" th:text="#{web.html.navbar.account.newsletter}">Newsletter</a> 
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" th:href="@{/logoutGet}">Sign Out</a>
+                <a class="dropdown-item" th:href="@{/logoutGet}" th:text="#{web.html.navbar.account.signout}">Sign Out</a>
               </div>
             </li>
+            
+                         
+             <li class="nav-item dropdown dropdown-toggle">
+              <a class="nav-link" href="#" id="navbarDropdown" role="button"
+                data-bs-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false" th:text="#{web.html.navbar.data}">Data
+              </a>
+               
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" th:href="@{/customerList}" th:text="#{web.html.navbar.data.customers}">Customers</a>
+                <a class="dropdown-item" th:href="@{/productList}" th:text="#{web.html.navbar.data.products}">Products</a>
+                <a class="dropdown-item" th:href="@{/providerList}" th:text="#{web.html.navbar.data.providers}">Providers</a>
+                <div class="dropdown-divider"></div>
+                
+                <a class="dropdown-item" th:href="@{/valuationList}" th:text="#{web.html.navbar.data.valuations}">Valuations</a>
+                
+                <a sec:authorize = "hasAuthority('MANAGER')" 
+                	class="dropdown-item" th:href="@{/familyList}" th:text="#{web.html.navbar.data.families}">Families
+                </a>
+                
+                <a class="dropdown-item" th:href="@{/userList}" th:text="#{web.html.navbar.data.users}">Users</a>
+                <a class="dropdown-item" th:href="@{/roleList}" th:text="#{web.html.navbar.data.roles}">Roles</a>
+                
+              </div>
+            </li>
+            
+             <li class="nav-item dropdown">
+
+		    <a class="nav-link"
+		       href="#"
+		       id="navbarDropdownLanguage"
+		       role="button"
+		       data-bs-toggle="dropdown"
+		       aria-haspopup="true"
+		       aria-expanded="false">
+		
+		        <img th:src="@{/img/world.jpg}"
+		             style="width:30px; margin-top:0px; margin-bottom:0px;">
+		
+		    </a>
+		
+		    <div class="dropdown-menu"
+		         aria-labelledby="navbarDropdownLanguage"> 
+		
+		        <a class="dropdown-item" th:href="@{${requestURI} (lang=es_ES)}">
+		
+		            <img th:src="@{/img/es_ES.svg}"
+		                 height="30"
+		                >
+		
+		            <span th:text="#{locale.language.es_ES_TextLanguage}">
+		                ES
+		            </span>
+		            <i th:if="${#locale.toString()== 'es_ES'}"
+		            class = "text-success bi bi-check display-5">
+		            </i>
+		
+		        </a>
+		
+		        <a class="dropdown-item" th:href="@{${requestURI} (lang=en_US)}">
+		          <img th:src="@{/img/en_US.svg}"
+		                 height="30"
+		                >
+		
+		            <span th:text="#{locale.language.en_US_TextLanguage}">
+		                EN
+		            </span>
+		             <i th:if="${#locale.toString()== 'en_US'}"
+		            class = "text-success bi bi-check display-5">
+		            </i>
+		
+		        </a>
+		    </div>
+		    
+
+   			</li>
+               
+            
           </ul>
 
         </div>

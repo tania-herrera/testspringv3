@@ -43,10 +43,12 @@ public class WebSecurityConfig {
 	
 	private final IUserService userService;
 	private final LoginFailureHandler loginFailureHandler;
+	private final PasswordEncoder passwordEncoder;
 	
-	WebSecurityConfig(IUserService userService, LoginFailureHandler loginFailureHandler) {
+	WebSecurityConfig(IUserService userService, LoginFailureHandler loginFailureHandler, PasswordEncoder passwordEncoder ) {
 		this.userService = userService;
 		this.loginFailureHandler = loginFailureHandler;
+		this.passwordEncoder = passwordEncoder;
 	}
 	
 	@Bean
@@ -63,7 +65,7 @@ public class WebSecurityConfig {
 			        	.requestMatchers("/home", "/welcome").authenticated()
                         .anyRequest().authenticated())
 //                .formLogin(Customizer.withDefaults());	
-                .authenticationProvider(daoAuthenticationProvider())
+                .authenticationProvider(daoAuthenticationProvider(this.userService, this.passwordEncoder))
         
                 .formLogin(formLogin -> {
                     formLogin
@@ -96,45 +98,20 @@ public class WebSecurityConfig {
 			throws Exception {
 		AuthenticationManagerBuilder authenticationManagerBuilder =
 			httpSecurity.getSharedObject(AuthenticationManagerBuilder.class);		
-		authenticationManagerBuilder.authenticationProvider(daoAuthenticationProvider());		
+		authenticationManagerBuilder.authenticationProvider(daoAuthenticationProvider( userService,passwordEncoder));		
 		return authenticationManagerBuilder.build();
 	}
 
 	@Bean
-	DaoAuthenticationProvider daoAuthenticationProvider() {
-		DaoAuthenticationProvider daoAuthenticationProvider =
-				new DaoAuthenticationProvider(this.userService);
-		daoAuthenticationProvider.setPasswordEncoder(passwordEncoderBCrypt());
-		return daoAuthenticationProvider;
+	DaoAuthenticationProvider daoAuthenticationProvider(IUserService userService, PasswordEncoder passwordEncoder) {
+		DaoAuthenticationProvider provider =
+				new DaoAuthenticationProvider(userService);
+		
+		provider.setPasswordEncoder(passwordEncoder);
+		return provider;
 	}
 	
-	// Beans for data encryption.
-	@Bean
-	PasswordEncoder passwordEncoderBCrypt() {
-		return new BCryptPasswordEncoder();
-	}
 	
-	@Bean
-	PasswordEncoder passwordEncoderSCrypt() {
-		return SCryptPasswordEncoder.defaultsForSpringSecurity_v5_8();  
-		// Don's use constructor, it needs several parameters.
-		// Instead use method defaultsForSpringSecurity_v5_8() that
-		// constructs a SCrypt password encoder with cpu cost of 65,536, 
-		// memory cost of 8,parallelization of 1, a key length of 32 and 
-		// a salt length of 16 bytes.
-	}
-	
-	@Bean
-	PasswordEncoder passwordEncoderPbkdf2() {
-		return Pbkdf2PasswordEncoder.defaultsForSpringSecurity_v5_8(); //new Pbkdf2PasswordEncoder();
-		// Don's use constructor, it needs several parameters.
-		// Instead use method defaultsForSpringSecurity_v5_8() that
-		// constructs a PBKDF2 password encoder with no additional secret value. 
-		// There will be a salt length of 16 bytes, 310,000 iterations, SHA-256 algorithm 
-		// and a hash length of 256 bits. The default is based upon aiming for .5 seconds 
-		// to validate the password when this class was added. Users should tune 
-		// password verification to their own systems.
-	}
 
 }
 

@@ -12,21 +12,23 @@
             <div class="col-12 col-md-8">
               <ul class="nav justify-content-center justify-content-md-start">
                 <li class="nav-item">
-                  <a class="nav-link active" th:href="@{/home}">Home</a>
+                  <a class="nav-link active" th:href="@{/home}" th:text=#{web.html.navbar.home}>Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Features</a>
+                  <a class="nav-link" href="#" th:text=#{web.html.footer.features}>Features</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Terms</a>
+                  <a class="nav-link" href="#" th:text=#{web.html.footer.terms}>Terms</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" th:href="@{/aboutGet}">About</a>
+                  <a class="nav-link" th:href="@{/aboutGet}" th:text=#{web.html.navbar.about}>About</a>
                 </li>
               </ul>
             </div>
             <div class="col-12 col-md-4 mt-4 mt-md-0 text-center text-md-end">
-              © 2026 JAG. All Rights Reserved
+              <span  th:text=#{web.html.footer.copyright}>
+              	© 2026 JAG. All Rights Reserved
+              </span>
             </div>
           </div>
         </div>

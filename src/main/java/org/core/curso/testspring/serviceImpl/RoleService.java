@@ -52,45 +52,27 @@ public class RoleService implements IRoleService {
 
 	@Override
 	public String save(Role role) {
-
-	    Role role2 = null;
-	    
-	    // Convertir el rolename a mayúsculas
-	    role.setRolename(role.getRolename().toUpperCase());
-	    log.info("Intentando guardar el role: " + role);
-
-	    if (role.getId() == null) {
-
-	        // NUEVO ROLE
-	        
-	    	if (!this.existByRolename(role.getRolename())) {
-	            role2 = repo.save(role);
-	            return "Role nuevo guardado";
-	        } 
-	        else {
-	            return "Rolename ya existe";
-	        }
-
-	    } else {
-
-	        // MODIFICAR ROLE
-	        Optional<Role> roleSearched = this.findByRolename(role.getRolename());
-
-	        if (roleSearched.isEmpty()) {
-	            role2 = repo.save(role);
-	            return "Role actualizado";
-	        }
-	        else {
-	        	return "No se puede actualizar, ya existe";
-	        }
-	    }
-	    }
-
-	   
-
-
-	private boolean existByRolename(String rolename) {
-	    return repo.findByRolename(rolename).isPresent();
+		role.setRolename(role.getRolename().toUpperCase());
+		Role role2 = null;
+		if (role.getId() == null) {
+			if (!this.existsByRolename(role.getRolename())) {
+				role2 = repo.save(role);
+				return "Nueva alta Ok";
+			}
+			else {
+				return "Alta KO por duplicidad en el rolename";
+			}
+		}
+		else { 
+			Optional<Role> roleSearched = this.findByRolename(role.getRolename());		
+			if (roleSearched.isEmpty()) { 
+				role2 = repo.save(role);
+				return "Actualización Ok";
+			}
+			else {
+				return "Actualización KO por duplicidad en el rolename";			
+			}
+		}
 	}
 
 	@Override
@@ -114,10 +96,14 @@ public class RoleService implements IRoleService {
 	}
 
 	@Override
+	public Boolean existsByRolename(String rolename) {
+		return repo.existsByRolename(rolename);
+	}
+	
+	@Override
 	public Optional<Role> findById(Long id) {
 		return repo.findById(id);
 	}
-
 	
 	@Override
 	public Optional<Role> findByRolename(String rolename) {

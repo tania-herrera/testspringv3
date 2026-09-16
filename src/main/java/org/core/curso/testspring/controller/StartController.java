@@ -68,6 +68,9 @@ public class StartController {
 			Model model,
 			HttpServletRequest request) {
 		System.out.println("TRAZA welcomeGet");
+		System.out.println("requestURL: " + request.getRequestURL());
+		System.out.println("requestURI: " + request.getRequestURI());
+		model.addAttribute ("requestURI", request.getRequestURI().substring(request.getContextPath().length()));
 		model.addAttribute("username", principal.getName());
 		model.addAttribute("roles", userService.findByUsername(principal.getName()).get().getRoleSet());
 		return "welcome";

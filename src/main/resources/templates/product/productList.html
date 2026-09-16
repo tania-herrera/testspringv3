@@ -22,7 +22,7 @@
       <div class="container">
         <div class="row w-100">
           <div class="col-lg-12 col-md-12 col-12">
-            <h3 class="display-5 mb-2 text-white">
+            <h3 class="display-5 mb-2 text-white" th:text="#{web.productList.html.title}">
               Product list
             </h3>
             <h2 th:if="${message != null}"  
@@ -34,6 +34,7 @@
             <div>
               <a role="button" class="btn btn-success mb-1"
                 th:href="@{/productAddGet}">
+                <span class="text-warning" th:text="#{web.html.button.add}"></span>
                 <i class="bi bi-bag-plus-fill fa-lg"></i>
               </a>
             </div>
@@ -42,14 +43,14 @@
               <table class="table table-hover text-start text-dark">
                 <thead class="">
                   <tr class="bgd-gradient-blue  ">
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Role</th>
-                    <th>Valuation</th>
-                    <th class="text-primary">View</th>
-                    <th class="text-warning">Update</th>
-                    <th class="text-danger">Delete</th>                        
+                    <th th:text="#{web.productList.html.table.id}">Id</th>
+                    <th th:text="#{web.productList.html.table.name}">Name</th>
+                    <th th:text="#{web.productList.html.table.price}">Price</th>
+                    <th th:text="#{web.productList.html.table.family}">Family</th>
+                    <th th:text="#{web.productList.html.table.valuation}">Valuation</th>
+                    <th class="text-primary" th:text="#{web.html.button.view}">View</th>
+                    <th class="text-warning" th:text="#{web.html.button.update}">Update</th>
+                    <th class="text-danger" th:text="#{web.html.button.delete}">Delete</th>                        
                   </tr>
                 </thead>
                 <tbody>

@@ -22,9 +22,11 @@
       <div class="container">
         <div class="row text-center ">
           <div class="col-12 col-md-8 col-lg-7">
+
             <h3 th:if="${title != null}"  
             	class="fw-bold display-4 text-white" th:text=${title}>
             </h3>
+            
           </div>
         </div>
         
@@ -79,8 +81,8 @@
                 </div>
               
 				<div class="col input-group mb-2">
-				  <span class="input-group-text bg-secondary text-light" id="inputGroup-sizing-default">Role</span>
-                  <input readonly th:value="${item.getRole().getName()}" type="text" class="form-control">
+				  <span class="input-group-text bg-secondary text-light" id="inputGroup-sizing-default">Family</span>
+                  <input readonly th:value="${item.getFamily().getName()}" type="text" class="form-control">
                 </div>
               
               </div>
@@ -93,9 +95,8 @@
             	    </a>
             	</div>
               
-                <div th:if="${title == 'Product Delete'}" class="col text-center"> <!-- el th:if se agregó para eliminar la columna-->
- 	               <a   
- 	               type="button" th:href="@{/productDeletePost/} + ${item.getId()}"
+                <div th:if="${title == 'Product delete'}" class="col text-center">
+ 	               <a type="button" th:href="@{/productDeletePost/} + ${item.getId()}"
     	              class="btn btn-danger w-100 btn-round mb-3 btn-rised">
         	          Delete 
             	    </a>

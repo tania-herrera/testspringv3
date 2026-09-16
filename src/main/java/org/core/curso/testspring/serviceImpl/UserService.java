@@ -13,6 +13,7 @@ import org.core.curso.testspring.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import lombok.extern.slf4j.Slf4j;
@@ -21,14 +22,16 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class UserService implements IUserService {
 
-    private final LoginFailureHandler loginFailureHandler;
+    
 	private final IUserRepository repo;
 	private final IRoleService roleService;
+	private final PasswordEncoder passwordEncoder;
+	
 
-	UserService(IUserRepository repo, LoginFailureHandler loginFailureHandler, IRoleService roleService) {
+	UserService(IUserRepository repo, IRoleService roleService, PasswordEncoder passwordEncoder) {
 		this.repo = repo;
-		this.loginFailureHandler = loginFailureHandler;
 		this.roleService = roleService;
+		this.passwordEncoder = passwordEncoder;
 	}
 
 	@Override
@@ -82,8 +85,8 @@ public class UserService implements IUserService {
 				.username("ana")
 				.email("ana@gmail.com")
 				.fullname("Ana Sanz")
-				.expiryDateAccount(LocalDate.now().plusDays(-2))
-				.expiryDateCredentials(LocalDate.now().plusDays(-5))
+				.expiryDateAccount(LocalDate.now().plusDays(1000))
+				.expiryDateCredentials(LocalDate.now().plusDays(300))
 				.lockedAccount(false)
 				.enabled(false)
 				.password("$2a$12$dR4tDCQBUFIfmr3.NslvsuGrPpYofax3KnBgAbvRpON6GJ.sSAqce")
@@ -95,8 +98,8 @@ public class UserService implements IUserService {
 				.username("luis")
 				.email("luis@gmail.com")
 				.fullname("Luis Pérez")
-				.expiryDateAccount(LocalDate.now().plusDays(2))
-				.expiryDateCredentials(LocalDate.now().plusDays(5))
+				.expiryDateAccount(LocalDate.now().plusDays(1000))
+				.expiryDateCredentials(LocalDate.now().plusDays(1000))
 				.lockedAccount(false)
 				.enabled(true)
 				.password("$2a$12$OOhpBXUplTFhEx/Yp6rDxOWJ7Q75CzyWWROl.P7h2kdawZnDx9UXe")
@@ -104,10 +107,64 @@ public class UserService implements IUserService {
 				.build()
 				);
 		
+		//Es buena practica poner un punto en cada línea
+				repo.save(User.builder()
+				        .fullname("Eréndira Curicaveri")
+				        .username("erendira")
+				        .email("erendira.curicaveri@gmail.com")
+				        .expiryDateCredentials(LocalDate.now().plusDays(1000))
+				        .expiryDateAccount(LocalDate.now().plusDays(1000))
+				        .lockedAccount(false)
+				        .password("$2a$12$ZIOUB3aIzuXdQ7RA/DJZr.bM6TcxOO7QuA7/1WADM7n45d7nVXTpO") //fjgklj
+				        .enabled(true)
+				        .roleSet(Set.of(roleService.findById(1L).get(),
+				                roleService.findById(2L).get()))
+				        .build());
+				
+				repo.save(User.builder()
+				        .fullname("Ireta Tariácuri")
+				        .username("ireta")
+				        .email("ireta.tariacuri@gmail.com")
+				        .password("$2a$12$.tU3XGBephwMJo9O/qYiSOh5.vzuCF12G9PjS.T3wX/.AcmXycZaq") //fjakf
+				        .expiryDateCredentials(LocalDate.now().plusDays(1000))
+				        .expiryDateAccount(LocalDate.now().plusDays(1000))
+				        .lockedAccount(false)
+				        .enabled(true)
+				        .roleSet(Set.of(roleService.findById(1L).get(),
+				                roleService.findById(2L).get()))
+				        .build());
+				 
+				repo.save(User.builder()
+				        .fullname("Hirepan Huiramangari")
+				        .username("hirepan")
+				        .password("$2a$12$2nKshrC97xGO0KqcN2dag.AsdWnpVsARqok8MPV0DLAy9EOE9ttPe")//$2a$12$.
+				        .email("hirepan.huiramangari@gmail.com")
+				        .expiryDateCredentials(LocalDate.now().plusDays(1000))
+				        .expiryDateAccount(LocalDate.now().plusDays(1000))
+				        .lockedAccount(false)
+				        .enabled(true)
+				        .roleSet(Set.of(roleService.findById(1L).get(),
+				                roleService.findById(3L).get()))
+				        .build());
+				
+				repo.save(User.builder()
+				        .fullname("Xaratanga Curicaveri")
+				        .username("xaratanga")
+				        .email("xaratanga.curicaveri@gmail.com")
+				        .password("$2a$12$2nKshrC97xGO0KqcN2dag.AsdWnpVsARqok8MPV0DLAy9EOE9ttPe")//$2a$12$. Lo que el usuario pone de password nunca se guarda en ningún lado, solo se guarda la encriptación
+				        .expiryDateCredentials(LocalDate.now().plusDays(1000))
+				        .expiryDateAccount(LocalDate.now().plusDays(1000))
+				        .lockedAccount(false)
+				        .enabled(true)
+				        .roleSet(Set.of(roleService.findById(1L).get(),
+				                roleService.findById(4L).get()))
+				        .build());
+		
 	}
 
 	@Override
 	public void save(User user) {
+		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		repo.save(user);
 	}
 
