@@ -43,7 +43,8 @@ public class DataInitializer {
 
 	public void initialize() {
 		log.info("Initializing H2 Database...");
-
+//al pasar a producción no se tienen usualmente clientes ni productos y al menos un usuario y roles (el ADMIN) 
+		// y en su momento tendremos que crear un interfaces para después crear el de inicialización y luego el real.
 		roleService.saveDataTest();
 		userService.saveDataTest();
 		customerService.saveDataTest();

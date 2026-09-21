@@ -43,7 +43,7 @@ public class Role implements Serializable {
 	private Long id;
 	
 	
-	@Column(name = "ROLENAME", nullable = false)
+	@Column(name = "ROLENAME", unique = true, nullable = false)
 	@Size(min = 3, max = 50, message = "Rolename must have 2 to 50 characters")
 	private String rolename;
 	

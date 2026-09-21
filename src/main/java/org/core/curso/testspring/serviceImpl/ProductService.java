@@ -158,5 +158,17 @@ public class ProductService implements IProductService {
 		return repo.findByFamilyName(familyName);
 	}
 
+	@Override
+	public Double calculateAveragePrice() {
+		List<Product> productList = repo.findAll();
+		if (productList == null || productList.isEmpty()) {
+			return 0.0;
+		}
+		return (productList.stream()
+			.mapToDouble(x -> x.getPrice())
+			.average())
+			.getAsDouble();
+	}
+
 
 }

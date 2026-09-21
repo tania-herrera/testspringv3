@@ -31,5 +31,6 @@ public interface IProductService {
 	public void showAll();
 	public void showList(List<Product> productList);
 	public void showItem(Optional<Product> itemOpt);
+	public Double calculateAveragePrice();
 	
 }

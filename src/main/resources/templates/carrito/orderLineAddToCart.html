@@ -2,33 +2,28 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
 	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"      
-	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	  >
 
- <div th:replace="~{standardLayouts/head :: head1}">
+  <div th:replace="~{standardLayouts/head :: head1}">
   	AQUI DEBERIA SALIR EL head
   </div>
+
+  <body>
   
-  
-  <div th:replace="~{standardLayouts/navbar :: navbar1}">
+    <div th:replace="~{standardLayouts/navbar :: navbar1}">
   		AQUI DEBERIA SALIR EL navbar
   	</div>
   
-  
-	
-	<div th:unless="${formPage.getFormGenericPiece().getItemList()==null 
-			|| formPage.getFormGenericPiece().getItemList().isEmpty()}">
+	<div>
 		<h2 class="text-center text-warning mb-2" th:text="'Vamos de compras!!!'"></h2>
 
 		<!-- p th:text="${valuationTitleStringArray}"></p -->
 		<!-- p th:text="${valuationTitleStringArray.get(3)}"></p -->
 		
-		<div th:replace="~{dialectLayouts/keypadGenericPage :: keypadGenericPage1}" class="container">
-			<p>AQUI DEBE IR EL PAGINATOR</p>		
-		</div>
-		
  	    <div class="mx-2 row gx-xl-5 justify-content-center">
 
- 	     <div th:each="product :  ${itemList()}" class="col-lg-4 col-6 mb-4 mb-lg-0">
+ 	     <div th:each="product : ${itemList}" class="col-lg-4 col-6 mb-4 mb-lg-0">
   		     <!-- Product card -->
        		 <div>
           		<!-- Product image -->
@@ -45,7 +40,7 @@
                			>
                			<a th:href="@{/addToCart} + '/' + ${product.getId()}" >
             				<img
-	                 			th:src="${product.getPictureUrl()}"
+	                 			th:src="${product.getURL()}"
                  				class="w-100"
                  				alt=""
                  			/>
@@ -57,7 +52,7 @@
             <p class="text-muted mb-2" th:text="${product.getFamily().getName()}">Vegetables</p>
             
             <p>
-            <!-- 
+            	<!-- 
 				<span th:text="${valuationTitleStringArray.get(__${product.getValuation()}__ - 1)}" class="text-warning"></span>
             	<i th:each="i : ${#numbers.sequence(1, 5)}"
             		class="text-primary px-0 mx-0"
@@ -65,12 +60,11 @@
             			? 'fas fa-star fa-sm'
             			: 'far fa-star fa-sm'">
             	</i>
-            	 -->
+            	-->
             	<span th:text="#{html.orderLineDialectAddToCart.valuationTitleStringList[__${product.getValuation()}__]}" class="text-info"></span>         	
             </p>
             
             <h5 class="mb-3">
-            
               <span th:if="${product.getDiscount() > 0.0}" 
               	th:text="${#numbers.formatDecimal(product.getPrice(), 1, 'POINT', 2, 'COMMA')} + '€'"
               	class="text-muted me-2 small align-middle text-decoration-line-through">
@@ -100,9 +94,13 @@
     </div>
     </div>
     	
-		 <div th:replace="~{standardLayouts/footer :: footer1}">
+    <div th:replace="~{standardLayouts/footer :: footer1}">
   		AQUI DEBERIA SALIR EL footer
-  	</div>  
+  	</div>  	
+  	
+  	<div th:replace="~{standardLayouts/script :: script1}">
+  		AQUI DEBERIA SALIR EL script
+  	</div>
     
     </div>
   </body>

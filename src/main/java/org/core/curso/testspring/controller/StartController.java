@@ -26,16 +26,19 @@ import static org.springframework.security.web.context.HttpSessionSecurityContex
 
 import java.security.Principal;
 import java.util.List;
+import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 
 @Controller
 @Log
 public class StartController {
 	
+	private final LocaleChangeInterceptor localeChangeInterceptor;
 	private final IUserService userService;
 	
-	public StartController(IUserService userService) {
+	public StartController(IUserService userService, LocaleChangeInterceptor localeChangeInterceptor) {
 		super();
 		this.userService = userService;
+		this.localeChangeInterceptor = localeChangeInterceptor;
 	}
 	
 	@GetMapping({ "/", "/index" })
@@ -73,7 +76,8 @@ public class StartController {
 		
 		model.addAttribute("numberOfProducts", 7);
 		
-		model.addAttribute ("requestURI", request.getRequestURI().substring(request.getContextPath().length()));
+		model.addAttribute("requestURI", 
+			request.getRequestURI().substring(request.getContextPath().length()));
 		model.addAttribute("username", principal.getName());
 		model.addAttribute("roles", userService.findByUsername(principal.getName()).get().getRoleSet());
 		return "welcome";
