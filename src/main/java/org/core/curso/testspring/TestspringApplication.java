@@ -1,15 +1,10 @@
 package org.core.curso.testspring;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.core.curso.testspring.config.DataInitializer;
-import org.core.curso.testspring.data.model.Customer;
+import org.core.curso.testspring.config.IDataInitializer;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.security.authentication.AuthenticationManager;
 
 @SpringBootApplication
 public class TestspringApplication {
@@ -23,7 +18,7 @@ public class TestspringApplication {
 	}
 
 	@Bean
-	CommandLineRunner initDatabase (DataInitializer dataInitializer) {
+	CommandLineRunner initDatabase (IDataInitializer dataInitializer) {
 		
 		return args -> dataInitializer.initialize();
 		

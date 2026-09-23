@@ -16,7 +16,8 @@ public interface IUserService extends UserDetailsService {
 	public void delete(User user);
 
 	public void save(User user);
-	public void saveDataTest();
+	public void saveDataTestDev();
+	public void saveDataTestProd();
 	
 	public Boolean existsById(Long id);
 	public Boolean existsByUsername(String username);

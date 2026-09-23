@@ -43,12 +43,22 @@ public class RoleService implements IRoleService {
 	}
 
 	@Override
-	public void saveDataTest() {
+	public void saveDataTestDev() {
 		if (repo.count()==0) {
 			repo.save(new Role("USER"));
 			repo.save(new Role("ADMIN"));
 			repo.save(new Role("MANAGER"));		
 			repo.save(new Role("CUSTOMER"));
+			
+		}
+				
+	}
+	
+	@Override
+	public void saveDataTestProd() {
+		if (repo.count()==0) {
+			repo.save(new Role("ADMIN"));
+			
 			
 		}
 				

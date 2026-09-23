@@ -14,7 +14,8 @@ public interface IRoleService {
 	public void delete(Role role);
 
 	public String save(Role role);
-	public void saveDataTest();
+	public void saveDataTestDev();
+	public void saveDataTestProd();
 	
 	public Boolean existsById(Long id);
 	public Boolean existsByRolename(String rolename);

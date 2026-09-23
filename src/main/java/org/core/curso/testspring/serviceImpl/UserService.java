@@ -56,9 +56,9 @@ public class UserService implements IUserService {
 	}
 
 	@Override
-	public void saveDataTest() {
+	public void saveDataTestDev() {
 		repo.save(new User("curso", 
-				"$2a$12$oCExzQ1HgQUteuNrQTCCKOeDDeK4hsmAWtKJHcM7cYHH5wxprMwku", 
+				"$2a$12$ZIOUB3aIzuXdQ7RA/DJZr.bM6TcxOO7QuA7/1WADM7n45d7nVXTpO", //fjgklj
 				"curso@gmail.com", 
 				"Usuario del curso",
 				LocalDate.now().plusDays(2),
@@ -70,7 +70,7 @@ public class UserService implements IUserService {
 				));
 		
 		repo.save(new User("jag", 
-				"$2a$12$xqvz8G5CWU.VLhyXigPn4.B5.TINHXFbHuBmYClHjRJwjVjRD41kW", 
+				"$2a$12$xqvz8G5CWU.VLhyXigPn4.B5.TINHXFbHuBmYClHjRJwjVjRD41kW", //jag
 				"jag@gmail.com", 
 				"José A. Gutiérrez",
 				LocalDate.now().plusDays(2),
@@ -160,6 +160,22 @@ public class UserService implements IUserService {
 				                roleService.findById(4L).get()))
 				        .build());
 		
+	}
+	
+	
+	@Override
+	public void saveDataTestProd() {
+		repo.save(new User("curso", 
+				"$2a$12$ZIOUB3aIzuXdQ7RA/DJZr.bM6TcxOO7QuA7/1WADM7n45d7nVXTpO", //fjgklj 
+				"curso@gmail.com", 
+				"Usuario del curso",
+				LocalDate.now().plusDays(2),
+				false,
+				LocalDate.now().plusDays(5),
+				true,
+				Set.of(roleService.findByRolename("ADMIN").get()
+				)));
+
 	}
 
 	@Override

@@ -14,43 +14,34 @@ import lombok.extern.java.Log;
 
 @Component
 @Log
-//@Profile("dev")
-public class DataInitializer {
+@Profile("prod")
+public class ProdDataInitializer implements IDataInitializer{
 	
 	private final IRoleService roleService;
 	private final IUserService userService;
-	private final ICustomerService customerService;
 	private final IValuationService valuationService;
 	private final IFamilyService familyService;
-	private final IProductService productService;
 	
 	
-	public DataInitializer(
+	public ProdDataInitializer(
 			IRoleService roleService, 
 			IUserService userService, 
-			ICustomerService customerService,
 			IValuationService valuationService,
-			IFamilyService familyService,
-			IProductService productService) {
+			IFamilyService familyService) {
 		super();
 		this.roleService = roleService;
 		this.userService = userService;
-		this.customerService = customerService;
 		this.valuationService = valuationService;
 		this.familyService = familyService;
-		this.productService = productService;
 	}
 
 	public void initialize() {
 		log.info("Initializing H2 Database...");
-//al pasar a producción no se tienen usualmente clientes ni productos y al menos un usuario y roles (el ADMIN) 
-		// y en su momento tendremos que crear un interfaces para después crear el de inicialización y luego el real.
-		roleService.saveDataTest();
-		userService.saveDataTest();
-		customerService.saveDataTest();
+
+		roleService.saveDataTestProd();
+		userService.saveDataTestProd();
 		valuationService.saveDataTest();
 		familyService.saveDataTest();
-		productService.saveDataTest();
 		
 		log.info("Initialization finished.");
 	}
